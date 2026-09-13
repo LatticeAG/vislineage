@@ -1,0 +1,24 @@
+{
+  "name": "@latticeag/vislineage-sqlite",
+  "version": "0.1.0",
+  "description": "VisLineage SQLite persistence: transactions, staged imports, immutable rows, snapshots, signed audit log",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@latticeag/vislineage-core": "0.1.0"
+  }
+}

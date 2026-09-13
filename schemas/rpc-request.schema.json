@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://latticeag.dev/schemas/vislineage/rpc-request.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "method",
+    "params"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^vlq_[-_0-9A-Za-z]{21}$"
+    },
+    "method": {
+      "enum": [
+        "source.register",
+        "source.list",
+        "trace.create",
+        "trace.get",
+        "import.stage",
+        "import.get",
+        "import.commit",
+        "import.cancel",
+        "path.get",
+        "bundle.export",
+        "bundle.verify"
+      ]
+    },
+    "params": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,335 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://latticeag.dev/schemas/vislineage/step.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "body",
+    "hash"
+  ],
+  "properties": {
+    "body": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "workspace",
+        "trace",
+        "source",
+        "profile",
+        "record",
+        "native_trace",
+        "native_span",
+        "parents",
+        "agent",
+        "policy",
+        "offers",
+        "accept",
+        "attachments"
+      ],
+      "properties": {
+        "v": {
+          "const": 1
+        },
+        "workspace": {
+          "type": "string",
+          "pattern": "^vlw_[-_0-9A-Za-z]{21}$"
+        },
+        "trace": {
+          "type": "string",
+          "pattern": "^vlt_[-_0-9A-Za-z]{21}$"
+        },
+        "source": {
+          "type": "string",
+          "pattern": "^vls_[-_0-9A-Za-z]{21}$"
+        },
+        "profile": {
+          "enum": [
+            "langsmith-runs/1",
+            "langfuse-observations/1",
+            "braintrust-spans/1"
+          ]
+        },
+        "record": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+          "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+        },
+        "native_trace": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+          "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+        },
+        "native_span": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+          "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+        },
+        "parents": {
+          "type": "array",
+          "maxItems": 16,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "value"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "record",
+                  "span"
+                ]
+              },
+              "value": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256,
+                "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+              }
+            }
+          }
+        },
+        "agent": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "namespace",
+                "subject",
+                "principal"
+              ],
+              "properties": {
+                "namespace": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9.-]{0,63}$"
+                },
+                "subject": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 256,
+                  "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                  "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                },
+                "principal": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 256,
+                      "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                      "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "policy": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "digest",
+                "version",
+                "decision"
+              ],
+              "properties": {
+                "digest": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "version": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 256,
+                  "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                  "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                },
+                "decision": {
+                  "enum": [
+                    "ALLOW",
+                    "REVIEW",
+                    "DENY",
+                    "UNKNOWN"
+                  ]
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "offers": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "child_source",
+              "child_agent",
+              "scope"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^vld_[-_0-9A-Za-z]{21}$"
+              },
+              "child_source": {
+                "type": "string",
+                "pattern": "^vls_[-_0-9A-Za-z]{21}$"
+              },
+              "child_agent": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "namespace",
+                  "subject",
+                  "principal"
+                ],
+                "properties": {
+                  "namespace": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9.-]{0,63}$"
+                  },
+                  "subject": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 256,
+                    "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                    "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                  },
+                  "principal": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256,
+                        "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                        "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              },
+              "scope": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            }
+          }
+        },
+        "accept": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "parent",
+                "scope"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^vld_[-_0-9A-Za-z]{21}$"
+                },
+                "parent": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "source",
+                    "record",
+                    "hash"
+                  ],
+                  "properties": {
+                    "source": {
+                      "type": "string",
+                      "pattern": "^vls_[-_0-9A-Za-z]{21}$"
+                    },
+                    "record": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 256,
+                      "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                      "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                    },
+                    "hash": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{64}$"
+                    }
+                  }
+                },
+                "scope": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "attachments": {
+          "type": "array",
+          "maxItems": 16,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "digest",
+              "format",
+              "bytes"
+            ],
+            "properties": {
+              "digest": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "format": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256,
+                "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+              },
+              "bytes": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]*)$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://latticeag.dev/schemas/vislineage/sunlight-handoff.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "v",
+    "kind",
+    "format",
+    "bundle",
+    "action",
+    "trace",
+    "graph",
+    "disclosure",
+    "semantics"
+  ],
+  "properties": {
+    "v": {
+      "const": 1
+    },
+    "kind": {
+      "const": "action-lineage"
+    },
+    "format": {
+      "const": "vislineage-bundle/1"
+    },
+    "bundle": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "action": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "trace": {
+      "type": "string",
+      "pattern": "^vlt_[-_0-9A-Za-z]{21}$"
+    },
+    "graph": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "disclosure": {
+      "const": "NORMALIZED_ONLY"
+    },
+    "semantics": {
+      "const": "NOT_VERIFIED"
+    }
+  }
+}

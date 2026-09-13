@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://latticeag.dev/schemas/vislineage/verification.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "integrity",
+    "structural",
+    "origin",
+    "audit",
+    "disclosure",
+    "semantics",
+    "current_authority",
+    "reasons"
+  ],
+  "properties": {
+    "integrity": {
+      "enum": [
+        "VALID",
+        "INVALID"
+      ]
+    },
+    "structural": {
+      "enum": [
+        "COMPLETE_RELATIVE",
+        "INCOMPLETE",
+        "CONFLICTED"
+      ]
+    },
+    "origin": {
+      "enum": [
+        "TRUSTED_AT_PIN",
+        "UNSIGNED",
+        "UNTRUSTED",
+        "INCOMPLETE",
+        "CONFLICTED"
+      ]
+    },
+    "audit": {
+      "enum": [
+        "TRUSTED_AT_PIN",
+        "UNTRUSTED",
+        "INCOMPLETE"
+      ]
+    },
+    "disclosure": {
+      "const": "NORMALIZED_ONLY"
+    },
+    "semantics": {
+      "const": "NOT_VERIFIED"
+    },
+    "current_authority": {
+      "const": "UNKNOWN"
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

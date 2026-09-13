@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://latticeag.dev/schemas/vislineage/external-head.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "v",
+    "workspace",
+    "seq",
+    "hash"
+  ],
+  "properties": {
+    "v": {
+      "const": 1
+    },
+    "workspace": {
+      "type": "string",
+      "pattern": "^vlw_[-_0-9A-Za-z]{21}$"
+    },
+    "seq": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$"
+    },
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

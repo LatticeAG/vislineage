@@ -1,0 +1,1349 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://latticeag.dev/schemas/vislineage/bundle.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "body",
+    "hash",
+    "steps",
+    "origins",
+    "audit",
+    "attachments"
+  ],
+  "properties": {
+    "body": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "format",
+        "workspace",
+        "trace",
+        "revision",
+        "graph",
+        "path_request",
+        "path",
+        "inventory",
+        "attachment_policy",
+        "disclosure",
+        "trust_required"
+      ],
+      "properties": {
+        "v": {
+          "const": 1
+        },
+        "format": {
+          "const": "vislineage-bundle/1"
+        },
+        "workspace": {
+          "type": "string",
+          "pattern": "^vlw_[-_0-9A-Za-z]{21}$"
+        },
+        "trace": {
+          "type": "string",
+          "pattern": "^vlt_[-_0-9A-Za-z]{21}$"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        },
+        "graph": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "v",
+            "workspace",
+            "trace",
+            "steps",
+            "origins",
+            "edges",
+            "gaps"
+          ],
+          "properties": {
+            "v": {
+              "const": 1
+            },
+            "workspace": {
+              "type": "string",
+              "pattern": "^vlw_[-_0-9A-Za-z]{21}$"
+            },
+            "trace": {
+              "type": "string",
+              "pattern": "^vlt_[-_0-9A-Za-z]{21}$"
+            },
+            "steps": {
+              "type": "array",
+              "maxItems": 100000,
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            },
+            "origins": {
+              "type": "array",
+              "maxItems": 100000,
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            },
+            "edges": {
+              "type": "array",
+              "maxItems": 400000,
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            },
+            "gaps": {
+              "type": "array",
+              "maxItems": 400000,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "code",
+                  "subject",
+                  "related"
+                ],
+                "properties": {
+                  "code": {
+                    "enum": [
+                      "PARENT_MISSING",
+                      "PARENT_AMBIGUOUS",
+                      "OFFER_MISSING",
+                      "ACCEPT_MISSING",
+                      "DELEGATION_MISMATCH",
+                      "PARENT_HASH_MISMATCH",
+                      "DELEGATION_REUSED",
+                      "SOURCE_CONFLICT",
+                      "CYCLE",
+                      "ORIGIN_GAP",
+                      "ORIGIN_FORK"
+                    ]
+                  },
+                  "subject": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "related": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{64}$"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "path_request": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "trace",
+            "revision",
+            "action",
+            "max_depth",
+            "max_nodes"
+          ],
+          "properties": {
+            "trace": {
+              "type": "string",
+              "pattern": "^vlt_[-_0-9A-Za-z]{21}$"
+            },
+            "revision": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "action": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "source",
+                "record"
+              ],
+              "properties": {
+                "source": {
+                  "type": "string",
+                  "pattern": "^vls_[-_0-9A-Za-z]{21}$"
+                },
+                "record": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 256,
+                  "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                  "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                }
+              }
+            },
+            "max_depth": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 256
+            },
+            "max_nodes": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 4096
+            }
+          }
+        },
+        "path": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "trace",
+            "revision",
+            "graph",
+            "action",
+            "steps",
+            "origins",
+            "edges",
+            "gaps",
+            "structural",
+            "evidence",
+            "disclosure"
+          ],
+          "properties": {
+            "trace": {
+              "type": "string",
+              "pattern": "^vlt_[-_0-9A-Za-z]{21}$"
+            },
+            "revision": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "graph": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "action": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "steps": {
+              "type": "array",
+              "maxItems": 4096,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "body",
+                  "hash"
+                ],
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "v",
+                      "workspace",
+                      "trace",
+                      "source",
+                      "profile",
+                      "record",
+                      "native_trace",
+                      "native_span",
+                      "parents",
+                      "agent",
+                      "policy",
+                      "offers",
+                      "accept",
+                      "attachments"
+                    ],
+                    "properties": {
+                      "v": {
+                        "const": 1
+                      },
+                      "workspace": {
+                        "type": "string",
+                        "pattern": "^vlw_[-_0-9A-Za-z]{21}$"
+                      },
+                      "trace": {
+                        "type": "string",
+                        "pattern": "^vlt_[-_0-9A-Za-z]{21}$"
+                      },
+                      "source": {
+                        "type": "string",
+                        "pattern": "^vls_[-_0-9A-Za-z]{21}$"
+                      },
+                      "profile": {
+                        "enum": [
+                          "langsmith-runs/1",
+                          "langfuse-observations/1",
+                          "braintrust-spans/1"
+                        ]
+                      },
+                      "record": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256,
+                        "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                        "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                      },
+                      "native_trace": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256,
+                        "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                        "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                      },
+                      "native_span": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256,
+                        "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                        "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                      },
+                      "parents": {
+                        "type": "array",
+                        "maxItems": 16,
+                        "uniqueItems": true,
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "kind",
+                            "value"
+                          ],
+                          "properties": {
+                            "kind": {
+                              "enum": [
+                                "record",
+                                "span"
+                              ]
+                            },
+                            "value": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 256,
+                              "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                              "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                            }
+                          }
+                        }
+                      },
+                      "agent": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "required": [
+                              "namespace",
+                              "subject",
+                              "principal"
+                            ],
+                            "properties": {
+                              "namespace": {
+                                "type": "string",
+                                "pattern": "^[a-z][a-z0-9.-]{0,63}$"
+                              },
+                              "subject": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 256,
+                                "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                                "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                              },
+                              "principal": {
+                                "anyOf": [
+                                  {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "maxLength": 256,
+                                    "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                                    "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                                  },
+                                  {
+                                    "type": "null"
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "policy": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "required": [
+                              "digest",
+                              "version",
+                              "decision"
+                            ],
+                            "properties": {
+                              "digest": {
+                                "type": "string",
+                                "pattern": "^[0-9a-f]{64}$"
+                              },
+                              "version": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 256,
+                                "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                                "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                              },
+                              "decision": {
+                                "enum": [
+                                  "ALLOW",
+                                  "REVIEW",
+                                  "DENY",
+                                  "UNKNOWN"
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "offers": {
+                        "type": "array",
+                        "maxItems": 32,
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "id",
+                            "child_source",
+                            "child_agent",
+                            "scope"
+                          ],
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "pattern": "^vld_[-_0-9A-Za-z]{21}$"
+                            },
+                            "child_source": {
+                              "type": "string",
+                              "pattern": "^vls_[-_0-9A-Za-z]{21}$"
+                            },
+                            "child_agent": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": [
+                                "namespace",
+                                "subject",
+                                "principal"
+                              ],
+                              "properties": {
+                                "namespace": {
+                                  "type": "string",
+                                  "pattern": "^[a-z][a-z0-9.-]{0,63}$"
+                                },
+                                "subject": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 256,
+                                  "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                                  "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                                },
+                                "principal": {
+                                  "anyOf": [
+                                    {
+                                      "type": "string",
+                                      "minLength": 1,
+                                      "maxLength": 256,
+                                      "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                                      "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                                    },
+                                    {
+                                      "type": "null"
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "scope": {
+                              "type": "string",
+                              "pattern": "^[0-9a-f]{64}$"
+                            }
+                          }
+                        }
+                      },
+                      "accept": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "required": [
+                              "id",
+                              "parent",
+                              "scope"
+                            ],
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "pattern": "^vld_[-_0-9A-Za-z]{21}$"
+                              },
+                              "parent": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [
+                                  "source",
+                                  "record",
+                                  "hash"
+                                ],
+                                "properties": {
+                                  "source": {
+                                    "type": "string",
+                                    "pattern": "^vls_[-_0-9A-Za-z]{21}$"
+                                  },
+                                  "record": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "maxLength": 256,
+                                    "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                                    "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                                  },
+                                  "hash": {
+                                    "type": "string",
+                                    "pattern": "^[0-9a-f]{64}$"
+                                  }
+                                }
+                              },
+                              "scope": {
+                                "type": "string",
+                                "pattern": "^[0-9a-f]{64}$"
+                              }
+                            }
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "attachments": {
+                        "type": "array",
+                        "maxItems": 16,
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "digest",
+                            "format",
+                            "bytes"
+                          ],
+                          "properties": {
+                            "digest": {
+                              "type": "string",
+                              "pattern": "^[0-9a-f]{64}$"
+                            },
+                            "format": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 256,
+                              "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                              "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                            },
+                            "bytes": {
+                              "type": "string",
+                              "pattern": "^(0|[1-9][0-9]*)$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "hash": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              }
+            },
+            "origins": {
+              "type": "array",
+              "maxItems": 100000,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "body",
+                  "hash",
+                  "signature"
+                ],
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "v",
+                      "workspace",
+                      "source",
+                      "stream",
+                      "seq",
+                      "prev",
+                      "step",
+                      "key"
+                    ],
+                    "properties": {
+                      "v": {
+                        "const": 1
+                      },
+                      "workspace": {
+                        "type": "string",
+                        "pattern": "^vlw_[-_0-9A-Za-z]{21}$"
+                      },
+                      "source": {
+                        "type": "string",
+                        "pattern": "^vls_[-_0-9A-Za-z]{21}$"
+                      },
+                      "stream": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256,
+                        "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                        "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                      },
+                      "seq": {
+                        "type": "string",
+                        "pattern": "^(0|[1-9][0-9]*)$"
+                      },
+                      "prev": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{64}$"
+                      },
+                      "step": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{64}$"
+                      },
+                      "key": {
+                        "type": "string",
+                        "pattern": "^vlk_[-_0-9A-Za-z]{21}$"
+                      }
+                    }
+                  },
+                  "hash": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "signature": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9_-]+$",
+                    "description": "Ed25519 signature, 64 bytes, base64url"
+                  }
+                }
+              }
+            },
+            "edges": {
+              "type": "array",
+              "maxItems": 16384,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "body",
+                  "hash"
+                ],
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "v",
+                      "trace",
+                      "parent",
+                      "child",
+                      "kind",
+                      "delegation",
+                      "scope"
+                    ],
+                    "properties": {
+                      "v": {
+                        "const": 1
+                      },
+                      "trace": {
+                        "type": "string",
+                        "pattern": "^vlt_[-_0-9A-Za-z]{21}$"
+                      },
+                      "parent": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{64}$"
+                      },
+                      "child": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{64}$"
+                      },
+                      "kind": {
+                        "enum": [
+                          "NATIVE_PARENT",
+                          "DELEGATES"
+                        ]
+                      },
+                      "delegation": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "pattern": "^vld_[-_0-9A-Za-z]{21}$"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "scope": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "pattern": "^[0-9a-f]{64}$"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "hash": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              }
+            },
+            "gaps": {
+              "type": "array",
+              "maxItems": 100000,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "code",
+                  "subject",
+                  "related"
+                ],
+                "properties": {
+                  "code": {
+                    "enum": [
+                      "PARENT_MISSING",
+                      "PARENT_AMBIGUOUS",
+                      "OFFER_MISSING",
+                      "ACCEPT_MISSING",
+                      "DELEGATION_MISMATCH",
+                      "PARENT_HASH_MISMATCH",
+                      "DELEGATION_REUSED",
+                      "SOURCE_CONFLICT",
+                      "CYCLE",
+                      "ORIGIN_GAP",
+                      "ORIGIN_FORK"
+                    ]
+                  },
+                  "subject": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "related": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{64}$"
+                    }
+                  }
+                }
+              }
+            },
+            "structural": {
+              "enum": [
+                "COMPLETE_RELATIVE",
+                "INCOMPLETE",
+                "CONFLICTED"
+              ]
+            },
+            "evidence": {
+              "const": "CLAIMED"
+            },
+            "disclosure": {
+              "const": "NORMALIZED_ONLY"
+            }
+          }
+        },
+        "inventory": {
+          "type": "array",
+          "maxItems": 400000,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "digest",
+              "bytes"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "step",
+                  "origin",
+                  "audit",
+                  "attachment"
+                ]
+              },
+              "digest": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "bytes": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]*)$"
+              }
+            }
+          }
+        },
+        "attachment_policy": {
+          "enum": [
+            "INCLUDE",
+            "OMIT"
+          ]
+        },
+        "disclosure": {
+          "const": "NORMALIZED_ONLY"
+        },
+        "trust_required": {
+          "const": true
+        }
+      }
+    },
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "steps": {
+      "type": "array",
+      "maxItems": 100000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "body",
+          "hash"
+        ],
+        "properties": {
+          "body": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "v",
+              "workspace",
+              "trace",
+              "source",
+              "profile",
+              "record",
+              "native_trace",
+              "native_span",
+              "parents",
+              "agent",
+              "policy",
+              "offers",
+              "accept",
+              "attachments"
+            ],
+            "properties": {
+              "v": {
+                "const": 1
+              },
+              "workspace": {
+                "type": "string",
+                "pattern": "^vlw_[-_0-9A-Za-z]{21}$"
+              },
+              "trace": {
+                "type": "string",
+                "pattern": "^vlt_[-_0-9A-Za-z]{21}$"
+              },
+              "source": {
+                "type": "string",
+                "pattern": "^vls_[-_0-9A-Za-z]{21}$"
+              },
+              "profile": {
+                "enum": [
+                  "langsmith-runs/1",
+                  "langfuse-observations/1",
+                  "braintrust-spans/1"
+                ]
+              },
+              "record": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256,
+                "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+              },
+              "native_trace": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256,
+                "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+              },
+              "native_span": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256,
+                "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+              },
+              "parents": {
+                "type": "array",
+                "maxItems": 16,
+                "uniqueItems": true,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "kind",
+                    "value"
+                  ],
+                  "properties": {
+                    "kind": {
+                      "enum": [
+                        "record",
+                        "span"
+                      ]
+                    },
+                    "value": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 256,
+                      "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                      "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                    }
+                  }
+                }
+              },
+              "agent": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "namespace",
+                      "subject",
+                      "principal"
+                    ],
+                    "properties": {
+                      "namespace": {
+                        "type": "string",
+                        "pattern": "^[a-z][a-z0-9.-]{0,63}$"
+                      },
+                      "subject": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256,
+                        "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                        "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                      },
+                      "principal": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 256,
+                            "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                            "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "policy": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "digest",
+                      "version",
+                      "decision"
+                    ],
+                    "properties": {
+                      "digest": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{64}$"
+                      },
+                      "version": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256,
+                        "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                        "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                      },
+                      "decision": {
+                        "enum": [
+                          "ALLOW",
+                          "REVIEW",
+                          "DENY",
+                          "UNKNOWN"
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "offers": {
+                "type": "array",
+                "maxItems": 32,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "child_source",
+                    "child_agent",
+                    "scope"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^vld_[-_0-9A-Za-z]{21}$"
+                    },
+                    "child_source": {
+                      "type": "string",
+                      "pattern": "^vls_[-_0-9A-Za-z]{21}$"
+                    },
+                    "child_agent": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "namespace",
+                        "subject",
+                        "principal"
+                      ],
+                      "properties": {
+                        "namespace": {
+                          "type": "string",
+                          "pattern": "^[a-z][a-z0-9.-]{0,63}$"
+                        },
+                        "subject": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 256,
+                          "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                          "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                        },
+                        "principal": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 256,
+                              "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                              "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "scope": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{64}$"
+                    }
+                  }
+                }
+              },
+              "accept": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "id",
+                      "parent",
+                      "scope"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^vld_[-_0-9A-Za-z]{21}$"
+                      },
+                      "parent": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "source",
+                          "record",
+                          "hash"
+                        ],
+                        "properties": {
+                          "source": {
+                            "type": "string",
+                            "pattern": "^vls_[-_0-9A-Za-z]{21}$"
+                          },
+                          "record": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 256,
+                            "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                            "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                          },
+                          "hash": {
+                            "type": "string",
+                            "pattern": "^[0-9a-f]{64}$"
+                          }
+                        }
+                      },
+                      "scope": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{64}$"
+                      }
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "attachments": {
+                "type": "array",
+                "maxItems": 16,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "digest",
+                    "format",
+                    "bytes"
+                  ],
+                  "properties": {
+                    "digest": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{64}$"
+                    },
+                    "format": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 256,
+                      "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                      "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+                    },
+                    "bytes": {
+                      "type": "string",
+                      "pattern": "^(0|[1-9][0-9]*)$"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "hash": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "origins": {
+      "type": "array",
+      "maxItems": 100000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "body",
+          "hash",
+          "signature"
+        ],
+        "properties": {
+          "body": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "v",
+              "workspace",
+              "source",
+              "stream",
+              "seq",
+              "prev",
+              "step",
+              "key"
+            ],
+            "properties": {
+              "v": {
+                "const": 1
+              },
+              "workspace": {
+                "type": "string",
+                "pattern": "^vlw_[-_0-9A-Za-z]{21}$"
+              },
+              "source": {
+                "type": "string",
+                "pattern": "^vls_[-_0-9A-Za-z]{21}$"
+              },
+              "stream": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256,
+                "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+                "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+              },
+              "seq": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]*)$"
+              },
+              "prev": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "step": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "key": {
+                "type": "string",
+                "pattern": "^vlk_[-_0-9A-Za-z]{21}$"
+              }
+            }
+          },
+          "hash": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "signature": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "description": "Ed25519 signature, 64 bytes, base64url"
+          }
+        }
+      }
+    },
+    "audit": {
+      "type": "array",
+      "maxItems": 100000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "body",
+          "hash",
+          "signature"
+        ],
+        "properties": {
+          "body": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "v",
+              "workspace",
+              "seq",
+              "prev",
+              "request",
+              "key",
+              "data"
+            ],
+            "properties": {
+              "v": {
+                "const": 1
+              },
+              "workspace": {
+                "type": "string",
+                "pattern": "^vlw_[-_0-9A-Za-z]{21}$"
+              },
+              "seq": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]*)$"
+              },
+              "prev": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "request": {
+                "type": "string",
+                "pattern": "^vlq_[-_0-9A-Za-z]{21}$"
+              },
+              "key": {
+                "type": "string",
+                "pattern": "^vlk_[-_0-9A-Za-z]{21}$"
+              },
+              "data": {
+                "type": "object",
+                "required": [
+                  "kind"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "WorkspaceCreated",
+                      "SourceRegistered",
+                      "TraceCreated",
+                      "ImportStaged",
+                      "ImportCommitted",
+                      "ImportCancelled",
+                      "RetentionPruned",
+                      "KeyRotated"
+                    ]
+                  }
+                },
+                "description": "Closed tagged union on `kind` — see packages/core/src/schema.ts auditData() for each variant's exact member set"
+              }
+            }
+          },
+          "hash": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "signature": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "description": "Ed25519 signature, 64 bytes, base64url"
+          }
+        }
+      }
+    },
+    "attachments": {
+      "type": "array",
+      "maxItems": 100000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "digest",
+          "format",
+          "bytes",
+          "content"
+        ],
+        "properties": {
+          "digest": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "format": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256,
+            "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+            "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+          },
+          "bytes": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]*)$"
+          },
+          "content": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]+$"
+          }
+        }
+      }
+    }
+  }
+}

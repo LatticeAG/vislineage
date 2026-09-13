@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://latticeag.dev/schemas/vislineage/config.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "workspace",
+    "database",
+    "artifacts",
+    "audit_key_id",
+    "audit_key_env",
+    "bind",
+    "port",
+    "auth",
+    "retention",
+    "limits",
+    "observability",
+    "recovery_pin"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "workspace": {
+      "type": "string",
+      "pattern": "^vlw_[-_0-9A-Za-z]{21}$"
+    },
+    "database": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+      "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+    },
+    "artifacts": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+      "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+    },
+    "audit_key_id": {
+      "type": "string",
+      "pattern": "^vlk_[-_0-9A-Za-z]{21}$"
+    },
+    "audit_key_env": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_]{0,63}$"
+    },
+    "bind": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+      "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+    },
+    "port": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 65535
+    },
+    "auth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "token_env",
+        "roles"
+      ],
+      "properties": {
+        "token_env": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]{0,63}$"
+        },
+        "roles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "read",
+              "write",
+              "admin"
+            ]
+          }
+        }
+      }
+    },
+    "retention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stage_ttl_seconds",
+        "history_revisions",
+        "artifacts_days"
+      ],
+      "properties": {
+        "stage_ttl_seconds": {
+          "type": "integer",
+          "minimum": 60,
+          "maximum": 604800
+        },
+        "history_revisions": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10000
+        },
+        "artifacts_days": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3650
+        }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stage_rows",
+        "request_bytes",
+        "path_nodes",
+        "bundle_bytes"
+      ],
+      "properties": {
+        "stage_rows": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "request_bytes": {
+          "type": "integer",
+          "minimum": 4096,
+          "maximum": 8388608
+        },
+        "path_nodes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4096
+        },
+        "bundle_bytes": {
+          "type": "integer",
+          "minimum": 4096,
+          "maximum": 67108864
+        }
+      }
+    },
+    "observability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "metrics_socket"
+      ],
+      "properties": {
+        "level": {
+          "enum": [
+            "error",
+            "warn",
+            "info"
+          ]
+        },
+        "metrics_socket": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+          "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+        }
+      }
+    },
+    "recovery_pin": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+      "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+    }
+  }
+}

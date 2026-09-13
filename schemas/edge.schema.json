@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://latticeag.dev/schemas/vislineage/edge.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "body",
+    "hash"
+  ],
+  "properties": {
+    "body": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "trace",
+        "parent",
+        "child",
+        "kind",
+        "delegation",
+        "scope"
+      ],
+      "properties": {
+        "v": {
+          "const": 1
+        },
+        "trace": {
+          "type": "string",
+          "pattern": "^vlt_[-_0-9A-Za-z]{21}$"
+        },
+        "parent": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "child": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "kind": {
+          "enum": [
+            "NATIVE_PARENT",
+            "DELEGATES"
+          ]
+        },
+        "delegation": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^vld_[-_0-9A-Za-z]{21}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "scope": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://latticeag.dev/schemas/vislineage/path-request.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "trace",
+    "revision",
+    "action",
+    "max_depth",
+    "max_nodes"
+  ],
+  "properties": {
+    "trace": {
+      "type": "string",
+      "pattern": "^vlt_[-_0-9A-Za-z]{21}$"
+    },
+    "revision": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$"
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "record"
+      ],
+      "properties": {
+        "source": {
+          "type": "string",
+          "pattern": "^vls_[-_0-9A-Za-z]{21}$"
+        },
+        "record": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+          "description": "Text: 1-256 Unicode scalars, <=1024 UTF-8 bytes, no C0/DEL controls"
+        }
+      }
+    },
+    "max_depth": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 256
+    },
+    "max_nodes": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4096
+    }
+  }
+}

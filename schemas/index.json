@@ -1,0 +1,23 @@
+{
+  "registry": "vislineage/1",
+  "files": [
+    "step.schema.json",
+    "origin.schema.json",
+    "audit.schema.json",
+    "edge.schema.json",
+    "gap.schema.json",
+    "graph-manifest.schema.json",
+    "path-request.schema.json",
+    "path-result.schema.json",
+    "bundle.schema.json",
+    "trust-package.schema.json",
+    "trust-update.schema.json",
+    "external-head.schema.json",
+    "sunlight-handoff.schema.json",
+    "verification.schema.json",
+    "rpc-request.schema.json",
+    "rpc-error.schema.json",
+    "backup-manifest.schema.json",
+    "config.schema.json"
+  ]
+}

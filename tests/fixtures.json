@@ -1,0 +1,3454 @@
+{
+  "W": "vlw_wwwwwwwwwwwwwwwwwwwww",
+  "T": "vlt_ttttttttttttttttttttt",
+  "I": "vli_iiiiiiiiiiiiiiiiiiiii",
+  "Q": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+  "SA": {
+    "id": "vls_aaaaaaaaaaaaaaaaaaaaa",
+    "profile": "langsmith-runs/1",
+    "namespace": "lab",
+    "project": "ls"
+  },
+  "SB": {
+    "id": "vls_bbbbbbbbbbbbbbbbbbbbb",
+    "profile": "langfuse-observations/1",
+    "namespace": "lab",
+    "project": "lf"
+  },
+  "SC": {
+    "id": "vls_ccccccccccccccccccccc",
+    "profile": "braintrust-spans/1",
+    "namespace": "lab",
+    "project": "bt"
+  },
+  "A": {
+    "body": {
+      "v": 1,
+      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+      "trace": "vlt_ttttttttttttttttttttt",
+      "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+      "profile": "langsmith-runs/1",
+      "record": "a",
+      "native_trace": "native-ls",
+      "native_span": "a",
+      "parents": [],
+      "agent": {
+        "namespace": "lab",
+        "subject": "alice",
+        "principal": null
+      },
+      "policy": {
+        "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+        "version": "policy-1",
+        "decision": "ALLOW"
+      },
+      "offers": [
+        {
+          "id": "vld_ddddddddddddddddddddd",
+          "child_source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+          "child_agent": {
+            "namespace": "lab",
+            "subject": "bob",
+            "principal": null
+          },
+          "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+        }
+      ],
+      "accept": null,
+      "attachments": []
+    },
+    "hash": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+  },
+  "B": {
+    "body": {
+      "v": 1,
+      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+      "trace": "vlt_ttttttttttttttttttttt",
+      "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+      "profile": "langfuse-observations/1",
+      "record": "b",
+      "native_trace": "native-lf",
+      "native_span": "b",
+      "parents": [],
+      "agent": {
+        "namespace": "lab",
+        "subject": "bob",
+        "principal": null
+      },
+      "policy": {
+        "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+        "version": "policy-1",
+        "decision": "ALLOW"
+      },
+      "offers": [
+        {
+          "id": "vld_eeeeeeeeeeeeeeeeeeeee",
+          "child_source": "vls_ccccccccccccccccccccc",
+          "child_agent": {
+            "namespace": "lab",
+            "subject": "cara",
+            "principal": null
+          },
+          "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+        }
+      ],
+      "accept": {
+        "id": "vld_ddddddddddddddddddddd",
+        "parent": {
+          "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+          "record": "a",
+          "hash": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+        },
+        "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "attachments": []
+    },
+    "hash": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec"
+  },
+  "C": {
+    "body": {
+      "v": 1,
+      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+      "trace": "vlt_ttttttttttttttttttttt",
+      "source": "vls_ccccccccccccccccccccc",
+      "profile": "braintrust-spans/1",
+      "record": "c",
+      "native_trace": "native-bt",
+      "native_span": "c",
+      "parents": [],
+      "agent": {
+        "namespace": "lab",
+        "subject": "cara",
+        "principal": null
+      },
+      "policy": {
+        "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+        "version": "policy-1",
+        "decision": "ALLOW"
+      },
+      "offers": [],
+      "accept": {
+        "id": "vld_eeeeeeeeeeeeeeeeeeeee",
+        "parent": {
+          "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+          "record": "b",
+          "hash": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec"
+        },
+        "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "attachments": []
+    },
+    "hash": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d"
+  },
+  "OA": {
+    "body": {
+      "v": 1,
+      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+      "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+      "stream": "main",
+      "seq": "1",
+      "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+      "step": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354",
+      "key": "vlk_lllllllllllllllllllll"
+    },
+    "hash": "5acf023a71fb64e6eeb39c3114e07955f909486a82c92b438d6cf51b8c1cfb1b",
+    "signature": "ptmgqRvJxwjGG_1Dr31WGjK7PYPLCwiwJ0ARMgz0c6VCYxKdx2yXSE-I4w1RhzM_hV8CpLytHUp6HQH6j0iQDA"
+  },
+  "OB": {
+    "body": {
+      "v": 1,
+      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+      "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+      "stream": "main",
+      "seq": "1",
+      "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+      "step": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+      "key": "vlk_mmmmmmmmmmmmmmmmmmmmm"
+    },
+    "hash": "ea4ca766d5ba35e88d6910724c26469d53f74aa514b3d313063d86707e984786",
+    "signature": "C8xX85pg80z--1AUy_BS-DwGcv695aqb9_8oY_WzJYzky-Oe0zky-9PebwJwLuPPSOMDPhItUTw84ahbabtGAg"
+  },
+  "OC": {
+    "body": {
+      "v": 1,
+      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+      "source": "vls_ccccccccccccccccccccc",
+      "stream": "main",
+      "seq": "1",
+      "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+      "step": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+      "key": "vlk_nnnnnnnnnnnnnnnnnnnnn"
+    },
+    "hash": "48cce25040fe8ae56e4f4f9d964e71ec2a37d72dc1e71319399044035ef1bf8d",
+    "signature": "P5YNWe-waZq1zC9EJkvYLjm9rkindMToIrebo9cPVeAZk66LhJiXefaEKt2bUhPGUikQ4QyA8SskOWoVktdrDA"
+  },
+  "AB": {
+    "body": {
+      "v": 1,
+      "trace": "vlt_ttttttttttttttttttttt",
+      "parent": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354",
+      "child": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+      "kind": "DELEGATES",
+      "delegation": "vld_ddddddddddddddddddddd",
+      "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "hash": "ebfd733000e75231951c0cff713e69f5f109caf60ee9c1e8e5fe254c63516ae5"
+  },
+  "BC": {
+    "body": {
+      "v": 1,
+      "trace": "vlt_ttttttttttttttttttttt",
+      "parent": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+      "child": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+      "kind": "DELEGATES",
+      "delegation": "vld_eeeeeeeeeeeeeeeeeeeee",
+      "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "hash": "54d475d707825ef815312d5e1705f2fa909a92fd72757fa62940ebcf342d45d1"
+  },
+  "F0": {
+    "sources": [
+      {
+        "id": "vls_aaaaaaaaaaaaaaaaaaaaa",
+        "profile": "langsmith-runs/1",
+        "namespace": "lab",
+        "project": "ls"
+      },
+      {
+        "id": "vls_bbbbbbbbbbbbbbbbbbbbb",
+        "profile": "langfuse-observations/1",
+        "namespace": "lab",
+        "project": "lf"
+      },
+      {
+        "id": "vls_ccccccccccccccccccccc",
+        "profile": "braintrust-spans/1",
+        "namespace": "lab",
+        "project": "bt"
+      }
+    ],
+    "trace": {
+      "id": "vlt_ttttttttttttttttttttt",
+      "revision": "0",
+      "graph": "55c6b07ad72ca8913c2667a2a2b019cf668bd6f1f3f0bf96b49a0b77622d5bb6"
+    },
+    "audit": [
+      {
+        "body": {
+          "v": 1,
+          "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+          "seq": "1",
+          "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+          "request": "vlq_000000000000000000000",
+          "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+          "data": {
+            "kind": "WorkspaceCreated",
+            "config": "d10700f0f5189d9059a540c0c54e4442941e8e295eca74934881206edb22f210"
+          }
+        },
+        "hash": "20c27ded4c69442138e2877bbbcbf474fffe6afc6669b852aa1d1864112f26e1",
+        "signature": "ftmsD2c8q0u3lmHF7C7QzBjWz-cvrQL1t7YqDBazoiO6_mVnuanZdy3I9J5c1Dz2kLDXYXe5MSApyoygTVgmDQ"
+      },
+      {
+        "body": {
+          "v": 1,
+          "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+          "seq": "2",
+          "prev": "20c27ded4c69442138e2877bbbcbf474fffe6afc6669b852aa1d1864112f26e1",
+          "request": "vlq_111111111111111111111",
+          "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+          "data": {
+            "kind": "SourceRegistered",
+            "source": {
+              "id": "vls_aaaaaaaaaaaaaaaaaaaaa",
+              "profile": "langsmith-runs/1",
+              "namespace": "lab",
+              "project": "ls"
+            }
+          }
+        },
+        "hash": "7b27f200c9a612971168e5c477bd52ab743b8637619be926c447a21ceda8a767",
+        "signature": "bDiB-imtRs74I3QmbOWYEGPBkaI07npEL5XiEe9z9TUUndwVFI403Sg23Y7aSd1EF6-XCsLzTEnJgFaoPZf4CA"
+      },
+      {
+        "body": {
+          "v": 1,
+          "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+          "seq": "3",
+          "prev": "7b27f200c9a612971168e5c477bd52ab743b8637619be926c447a21ceda8a767",
+          "request": "vlq_222222222222222222222",
+          "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+          "data": {
+            "kind": "SourceRegistered",
+            "source": {
+              "id": "vls_bbbbbbbbbbbbbbbbbbbbb",
+              "profile": "langfuse-observations/1",
+              "namespace": "lab",
+              "project": "lf"
+            }
+          }
+        },
+        "hash": "12759774a972b2639482e60f1218a9ce084ad3d56762c228914b1be8f2aeae36",
+        "signature": "RmrRo6biz4f4-pyHy0AZafgY7MHQ9WnTlAOz6_jMjlu5Zlthgxlc6p_hf3MoraxLO_lYwJ0YBfww2e0Fl2L_Cw"
+      },
+      {
+        "body": {
+          "v": 1,
+          "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+          "seq": "4",
+          "prev": "12759774a972b2639482e60f1218a9ce084ad3d56762c228914b1be8f2aeae36",
+          "request": "vlq_333333333333333333333",
+          "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+          "data": {
+            "kind": "SourceRegistered",
+            "source": {
+              "id": "vls_ccccccccccccccccccccc",
+              "profile": "braintrust-spans/1",
+              "namespace": "lab",
+              "project": "bt"
+            }
+          }
+        },
+        "hash": "dc4f5a3120137188193cbde5323928c7e1a21a4324bf597b6a4aa952c6965134",
+        "signature": "eTtI13enfNAVKNFQuQdW0THNPEVwi6Re8BVTH-t2buYkSNOyoeqx8d_tBTTABmCD7J3WGnXjy22ztdM4hcz5Bw"
+      },
+      {
+        "body": {
+          "v": 1,
+          "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+          "seq": "5",
+          "prev": "dc4f5a3120137188193cbde5323928c7e1a21a4324bf597b6a4aa952c6965134",
+          "request": "vlq_444444444444444444444",
+          "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+          "data": {
+            "kind": "TraceCreated",
+            "trace": "vlt_ttttttttttttttttttttt",
+            "graph": "55c6b07ad72ca8913c2667a2a2b019cf668bd6f1f3f0bf96b49a0b77622d5bb6"
+          }
+        },
+        "hash": "5199c6b173c4e9b2c4bec6d982e099456057f2f896495211d18650a9f6c6a00c",
+        "signature": "5eABUhWajvTK17Y6ArW_KQmE6KCll_96A7ZDxMcN7faWhxA9AoV4oXVNablchiVBDd5STS5IWxbg8ij8RvQKAw"
+      }
+    ]
+  },
+  "ST": {
+    "request": {
+      "import": "vli_iiiiiiiiiiiiiiiiiiiii",
+      "trace": "vlt_ttttttttttttttttttttt",
+      "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+      "rows": [
+        {
+          "id": "a",
+          "trace_id": "native-ls",
+          "parent_run_id": null,
+          "extra": {
+            "metadata": {
+              "vislineage": {
+                "v": 1,
+                "trace_id": "vlt_ttttttttttttttttttttt",
+                "agent": {
+                  "namespace": "lab",
+                  "subject": "alice",
+                  "principal": null
+                },
+                "policy": {
+                  "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                  "version": "policy-1",
+                  "decision": "ALLOW"
+                },
+                "offers": [
+                  {
+                    "id": "vld_ddddddddddddddddddddd",
+                    "child_source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                    "child_agent": {
+                      "namespace": "lab",
+                      "subject": "bob",
+                      "principal": null
+                    },
+                    "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                  }
+                ],
+                "accept": null,
+                "attachments": []
+              }
+            }
+          }
+        }
+      ],
+      "origins": [
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+            "stream": "main",
+            "seq": "1",
+            "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+            "step": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354",
+            "key": "vlk_lllllllllllllllllllll"
+          },
+          "hash": "5acf023a71fb64e6eeb39c3114e07955f909486a82c92b438d6cf51b8c1cfb1b",
+          "signature": "ptmgqRvJxwjGG_1Dr31WGjK7PYPLCwiwJ0ARMgz0c6VCYxKdx2yXSE-I4w1RhzM_hV8CpLytHUp6HQH6j0iQDA"
+        }
+      ],
+      "artifacts": []
+    },
+    "hash": "2c7686a3bef575039478fc56d4431a9f1b41d3f9b3fe5382b220407895ccde1c",
+    "stage_id": "vlq_555555555555555555555",
+    "commit_id": "vlq_666666666666666666666",
+    "commit": {
+      "import": "vli_iiiiiiiiiiiiiiiiiiiii",
+      "state": "COMMITTED",
+      "trace": "vlt_ttttttttttttttttttttt",
+      "revision": "1",
+      "graph": "7cf8d0976563186aa1edee4eb72e2b00d4b76332a5828265f9c9ff4ae04b24f5",
+      "added": 1,
+      "duplicates": 0,
+      "conflicts": 0,
+      "audit": "1c50190734e58508bcf3a28e36faf2d2f967a0fe7670f8aca274d5624b065d0b"
+    }
+  },
+  "F": {
+    "graph_hash": "254266ac6c98e6250badf6de27c4afdf2e2a32284e4bdb79210aa8b18f5c720a",
+    "path_request": {
+      "trace": "vlt_ttttttttttttttttttttt",
+      "revision": "3",
+      "action": {
+        "source": "vls_ccccccccccccccccccccc",
+        "record": "c"
+      },
+      "max_depth": 256,
+      "max_nodes": 4096
+    },
+    "path": {
+      "trace": "vlt_ttttttttttttttttttttt",
+      "revision": "3",
+      "graph": "254266ac6c98e6250badf6de27c4afdf2e2a32284e4bdb79210aa8b18f5c720a",
+      "action": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+      "steps": [
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "trace": "vlt_ttttttttttttttttttttt",
+            "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+            "profile": "langsmith-runs/1",
+            "record": "a",
+            "native_trace": "native-ls",
+            "native_span": "a",
+            "parents": [],
+            "agent": {
+              "namespace": "lab",
+              "subject": "alice",
+              "principal": null
+            },
+            "policy": {
+              "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+              "version": "policy-1",
+              "decision": "ALLOW"
+            },
+            "offers": [
+              {
+                "id": "vld_ddddddddddddddddddddd",
+                "child_source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                "child_agent": {
+                  "namespace": "lab",
+                  "subject": "bob",
+                  "principal": null
+                },
+                "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+              }
+            ],
+            "accept": null,
+            "attachments": []
+          },
+          "hash": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+        },
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "trace": "vlt_ttttttttttttttttttttt",
+            "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+            "profile": "langfuse-observations/1",
+            "record": "b",
+            "native_trace": "native-lf",
+            "native_span": "b",
+            "parents": [],
+            "agent": {
+              "namespace": "lab",
+              "subject": "bob",
+              "principal": null
+            },
+            "policy": {
+              "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+              "version": "policy-1",
+              "decision": "ALLOW"
+            },
+            "offers": [
+              {
+                "id": "vld_eeeeeeeeeeeeeeeeeeeee",
+                "child_source": "vls_ccccccccccccccccccccc",
+                "child_agent": {
+                  "namespace": "lab",
+                  "subject": "cara",
+                  "principal": null
+                },
+                "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+              }
+            ],
+            "accept": {
+              "id": "vld_ddddddddddddddddddddd",
+              "parent": {
+                "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                "record": "a",
+                "hash": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+              },
+              "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+            },
+            "attachments": []
+          },
+          "hash": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec"
+        },
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "trace": "vlt_ttttttttttttttttttttt",
+            "source": "vls_ccccccccccccccccccccc",
+            "profile": "braintrust-spans/1",
+            "record": "c",
+            "native_trace": "native-bt",
+            "native_span": "c",
+            "parents": [],
+            "agent": {
+              "namespace": "lab",
+              "subject": "cara",
+              "principal": null
+            },
+            "policy": {
+              "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+              "version": "policy-1",
+              "decision": "ALLOW"
+            },
+            "offers": [],
+            "accept": {
+              "id": "vld_eeeeeeeeeeeeeeeeeeeee",
+              "parent": {
+                "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                "record": "b",
+                "hash": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec"
+              },
+              "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+            },
+            "attachments": []
+          },
+          "hash": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d"
+        }
+      ],
+      "origins": [
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+            "stream": "main",
+            "seq": "1",
+            "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+            "step": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354",
+            "key": "vlk_lllllllllllllllllllll"
+          },
+          "hash": "5acf023a71fb64e6eeb39c3114e07955f909486a82c92b438d6cf51b8c1cfb1b",
+          "signature": "ptmgqRvJxwjGG_1Dr31WGjK7PYPLCwiwJ0ARMgz0c6VCYxKdx2yXSE-I4w1RhzM_hV8CpLytHUp6HQH6j0iQDA"
+        },
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+            "stream": "main",
+            "seq": "1",
+            "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+            "step": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+            "key": "vlk_mmmmmmmmmmmmmmmmmmmmm"
+          },
+          "hash": "ea4ca766d5ba35e88d6910724c26469d53f74aa514b3d313063d86707e984786",
+          "signature": "C8xX85pg80z--1AUy_BS-DwGcv695aqb9_8oY_WzJYzky-Oe0zky-9PebwJwLuPPSOMDPhItUTw84ahbabtGAg"
+        },
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "source": "vls_ccccccccccccccccccccc",
+            "stream": "main",
+            "seq": "1",
+            "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+            "step": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+            "key": "vlk_nnnnnnnnnnnnnnnnnnnnn"
+          },
+          "hash": "48cce25040fe8ae56e4f4f9d964e71ec2a37d72dc1e71319399044035ef1bf8d",
+          "signature": "P5YNWe-waZq1zC9EJkvYLjm9rkindMToIrebo9cPVeAZk66LhJiXefaEKt2bUhPGUikQ4QyA8SskOWoVktdrDA"
+        }
+      ],
+      "edges": [
+        {
+          "body": {
+            "v": 1,
+            "trace": "vlt_ttttttttttttttttttttt",
+            "parent": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+            "child": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+            "kind": "DELEGATES",
+            "delegation": "vld_eeeeeeeeeeeeeeeeeeeee",
+            "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+          },
+          "hash": "54d475d707825ef815312d5e1705f2fa909a92fd72757fa62940ebcf342d45d1"
+        },
+        {
+          "body": {
+            "v": 1,
+            "trace": "vlt_ttttttttttttttttttttt",
+            "parent": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354",
+            "child": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+            "kind": "DELEGATES",
+            "delegation": "vld_ddddddddddddddddddddd",
+            "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+          },
+          "hash": "ebfd733000e75231951c0cff713e69f5f109caf60ee9c1e8e5fe254c63516ae5"
+        }
+      ],
+      "gaps": [],
+      "structural": "COMPLETE_RELATIVE",
+      "evidence": "CLAIMED",
+      "disclosure": "NORMALIZED_ONLY"
+    },
+    "bundle": {
+      "body": {
+        "v": 1,
+        "format": "vislineage-bundle/1",
+        "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+        "trace": "vlt_ttttttttttttttttttttt",
+        "revision": "3",
+        "graph": {
+          "v": 1,
+          "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+          "trace": "vlt_ttttttttttttttttttttt",
+          "steps": [
+            "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+            "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+            "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+          ],
+          "origins": [
+            "48cce25040fe8ae56e4f4f9d964e71ec2a37d72dc1e71319399044035ef1bf8d",
+            "5acf023a71fb64e6eeb39c3114e07955f909486a82c92b438d6cf51b8c1cfb1b",
+            "ea4ca766d5ba35e88d6910724c26469d53f74aa514b3d313063d86707e984786"
+          ],
+          "edges": [
+            "54d475d707825ef815312d5e1705f2fa909a92fd72757fa62940ebcf342d45d1",
+            "ebfd733000e75231951c0cff713e69f5f109caf60ee9c1e8e5fe254c63516ae5"
+          ],
+          "gaps": []
+        },
+        "path_request": {
+          "trace": "vlt_ttttttttttttttttttttt",
+          "revision": "3",
+          "action": {
+            "source": "vls_ccccccccccccccccccccc",
+            "record": "c"
+          },
+          "max_depth": 256,
+          "max_nodes": 4096
+        },
+        "path": {
+          "trace": "vlt_ttttttttttttttttttttt",
+          "revision": "3",
+          "graph": "254266ac6c98e6250badf6de27c4afdf2e2a32284e4bdb79210aa8b18f5c720a",
+          "action": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+          "steps": [
+            {
+              "body": {
+                "v": 1,
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "trace": "vlt_ttttttttttttttttttttt",
+                "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                "profile": "langsmith-runs/1",
+                "record": "a",
+                "native_trace": "native-ls",
+                "native_span": "a",
+                "parents": [],
+                "agent": {
+                  "namespace": "lab",
+                  "subject": "alice",
+                  "principal": null
+                },
+                "policy": {
+                  "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                  "version": "policy-1",
+                  "decision": "ALLOW"
+                },
+                "offers": [
+                  {
+                    "id": "vld_ddddddddddddddddddddd",
+                    "child_source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                    "child_agent": {
+                      "namespace": "lab",
+                      "subject": "bob",
+                      "principal": null
+                    },
+                    "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                  }
+                ],
+                "accept": null,
+                "attachments": []
+              },
+              "hash": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+            },
+            {
+              "body": {
+                "v": 1,
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "trace": "vlt_ttttttttttttttttttttt",
+                "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                "profile": "langfuse-observations/1",
+                "record": "b",
+                "native_trace": "native-lf",
+                "native_span": "b",
+                "parents": [],
+                "agent": {
+                  "namespace": "lab",
+                  "subject": "bob",
+                  "principal": null
+                },
+                "policy": {
+                  "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                  "version": "policy-1",
+                  "decision": "ALLOW"
+                },
+                "offers": [
+                  {
+                    "id": "vld_eeeeeeeeeeeeeeeeeeeee",
+                    "child_source": "vls_ccccccccccccccccccccc",
+                    "child_agent": {
+                      "namespace": "lab",
+                      "subject": "cara",
+                      "principal": null
+                    },
+                    "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                  }
+                ],
+                "accept": {
+                  "id": "vld_ddddddddddddddddddddd",
+                  "parent": {
+                    "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                    "record": "a",
+                    "hash": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+                  },
+                  "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                },
+                "attachments": []
+              },
+              "hash": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec"
+            },
+            {
+              "body": {
+                "v": 1,
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "trace": "vlt_ttttttttttttttttttttt",
+                "source": "vls_ccccccccccccccccccccc",
+                "profile": "braintrust-spans/1",
+                "record": "c",
+                "native_trace": "native-bt",
+                "native_span": "c",
+                "parents": [],
+                "agent": {
+                  "namespace": "lab",
+                  "subject": "cara",
+                  "principal": null
+                },
+                "policy": {
+                  "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                  "version": "policy-1",
+                  "decision": "ALLOW"
+                },
+                "offers": [],
+                "accept": {
+                  "id": "vld_eeeeeeeeeeeeeeeeeeeee",
+                  "parent": {
+                    "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                    "record": "b",
+                    "hash": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec"
+                  },
+                  "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                },
+                "attachments": []
+              },
+              "hash": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d"
+            }
+          ],
+          "origins": [
+            {
+              "body": {
+                "v": 1,
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                "stream": "main",
+                "seq": "1",
+                "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                "step": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354",
+                "key": "vlk_lllllllllllllllllllll"
+              },
+              "hash": "5acf023a71fb64e6eeb39c3114e07955f909486a82c92b438d6cf51b8c1cfb1b",
+              "signature": "ptmgqRvJxwjGG_1Dr31WGjK7PYPLCwiwJ0ARMgz0c6VCYxKdx2yXSE-I4w1RhzM_hV8CpLytHUp6HQH6j0iQDA"
+            },
+            {
+              "body": {
+                "v": 1,
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                "stream": "main",
+                "seq": "1",
+                "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                "step": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+                "key": "vlk_mmmmmmmmmmmmmmmmmmmmm"
+              },
+              "hash": "ea4ca766d5ba35e88d6910724c26469d53f74aa514b3d313063d86707e984786",
+              "signature": "C8xX85pg80z--1AUy_BS-DwGcv695aqb9_8oY_WzJYzky-Oe0zky-9PebwJwLuPPSOMDPhItUTw84ahbabtGAg"
+            },
+            {
+              "body": {
+                "v": 1,
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "source": "vls_ccccccccccccccccccccc",
+                "stream": "main",
+                "seq": "1",
+                "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                "step": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+                "key": "vlk_nnnnnnnnnnnnnnnnnnnnn"
+              },
+              "hash": "48cce25040fe8ae56e4f4f9d964e71ec2a37d72dc1e71319399044035ef1bf8d",
+              "signature": "P5YNWe-waZq1zC9EJkvYLjm9rkindMToIrebo9cPVeAZk66LhJiXefaEKt2bUhPGUikQ4QyA8SskOWoVktdrDA"
+            }
+          ],
+          "edges": [
+            {
+              "body": {
+                "v": 1,
+                "trace": "vlt_ttttttttttttttttttttt",
+                "parent": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+                "child": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+                "kind": "DELEGATES",
+                "delegation": "vld_eeeeeeeeeeeeeeeeeeeee",
+                "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+              },
+              "hash": "54d475d707825ef815312d5e1705f2fa909a92fd72757fa62940ebcf342d45d1"
+            },
+            {
+              "body": {
+                "v": 1,
+                "trace": "vlt_ttttttttttttttttttttt",
+                "parent": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354",
+                "child": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+                "kind": "DELEGATES",
+                "delegation": "vld_ddddddddddddddddddddd",
+                "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+              },
+              "hash": "ebfd733000e75231951c0cff713e69f5f109caf60ee9c1e8e5fe254c63516ae5"
+            }
+          ],
+          "gaps": [],
+          "structural": "COMPLETE_RELATIVE",
+          "evidence": "CLAIMED",
+          "disclosure": "NORMALIZED_ONLY"
+        },
+        "inventory": [
+          {
+            "kind": "audit",
+            "digest": "0ed47872174dc6fa0b06f43a11205b631d95dc318e0d8e60612d0b3ab69113cd",
+            "bytes": "535"
+          },
+          {
+            "kind": "audit",
+            "digest": "55286590957f4740ca3937fca48353124eb33d6bccfea908060d97332d54b6d3",
+            "bytes": "498"
+          },
+          {
+            "kind": "audit",
+            "digest": "5e4ec09fe70e4663e9e15c7fe425761958eb1a3390a60580bcf685553e8fc175",
+            "bytes": "575"
+          },
+          {
+            "kind": "audit",
+            "digest": "61dfd67b1769c250497cf4235b0fb6452a467daac342b8f5ad096218ac6ae469",
+            "bytes": "575"
+          },
+          {
+            "kind": "audit",
+            "digest": "646b20e6d2bb84ca227df43dfd0d4bdf97ec3b3e1961e680e198cdf14193e4e2",
+            "bytes": "529"
+          },
+          {
+            "kind": "audit",
+            "digest": "7dcbe147c3025117cb45353c9ce288b0f418161fb15703495d77c82992622bd6",
+            "bytes": "660"
+          },
+          {
+            "kind": "audit",
+            "digest": "a466bac61788e65d8c8788e8e6c5d50389bacb2a537bc65ffe194cdba4721edb",
+            "bytes": "528"
+          },
+          {
+            "kind": "audit",
+            "digest": "ae093406a1c274b9fbd0aa2827c9bca219d6107fc28552623bf3586d986675d2",
+            "bytes": "530"
+          },
+          {
+            "kind": "audit",
+            "digest": "e72da98f1485b856434faa565d97d7d18156206f346e715939bfba1d92aeb3d0",
+            "bytes": "659"
+          },
+          {
+            "kind": "audit",
+            "digest": "f7d45ee72b8c71074100aa5e06e0c15e965c73654f8b9e7e599f1ae034b4b6b4",
+            "bytes": "659"
+          },
+          {
+            "kind": "audit",
+            "digest": "fee4e9ba36e34a8fb9682247f726867c07aab3814d5b8cdb975d4fd37afdbdf8",
+            "bytes": "576"
+          },
+          {
+            "kind": "origin",
+            "digest": "2427577ecbc7af574b6844fd5eb80b3361d6b16f6b75dd8b650ee5693a49d215",
+            "bytes": "476"
+          },
+          {
+            "kind": "origin",
+            "digest": "6022cea06a74bb10904c48cce9efa59abd0cf1f60d552996097f04a7aa3a0188",
+            "bytes": "476"
+          },
+          {
+            "kind": "origin",
+            "digest": "f2caa7e1fb413f54b7fc708790af90a28429f7dec649ba1d8323042d89cf4153",
+            "bytes": "476"
+          },
+          {
+            "kind": "step",
+            "digest": "2de97b5e20c08ed18751293f0705bfceae8bccdb4357a56f675edc8c7ea10086",
+            "bytes": "777"
+          },
+          {
+            "kind": "step",
+            "digest": "7fd094ccd9ea665749c00e0cffa0c0420eaae6f1ab8904cb5fb88a682548b41b",
+            "bytes": "1001"
+          },
+          {
+            "kind": "step",
+            "digest": "e70289bd68de1514488df10d25147289ef7555ff0571d91ec208290f1e1af497",
+            "bytes": "755"
+          }
+        ],
+        "attachment_policy": "OMIT",
+        "disclosure": "NORMALIZED_ONLY",
+        "trust_required": true
+      },
+      "hash": "d0297474ddc9c378f7e0b16537fa1d702bd2cb160fceaa75832cb4937578ecfa",
+      "steps": [
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "trace": "vlt_ttttttttttttttttttttt",
+            "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+            "profile": "langfuse-observations/1",
+            "record": "b",
+            "native_trace": "native-lf",
+            "native_span": "b",
+            "parents": [],
+            "agent": {
+              "namespace": "lab",
+              "subject": "bob",
+              "principal": null
+            },
+            "policy": {
+              "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+              "version": "policy-1",
+              "decision": "ALLOW"
+            },
+            "offers": [
+              {
+                "id": "vld_eeeeeeeeeeeeeeeeeeeee",
+                "child_source": "vls_ccccccccccccccccccccc",
+                "child_agent": {
+                  "namespace": "lab",
+                  "subject": "cara",
+                  "principal": null
+                },
+                "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+              }
+            ],
+            "accept": {
+              "id": "vld_ddddddddddddddddddddd",
+              "parent": {
+                "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                "record": "a",
+                "hash": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+              },
+              "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+            },
+            "attachments": []
+          },
+          "hash": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec"
+        },
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "trace": "vlt_ttttttttttttttttttttt",
+            "source": "vls_ccccccccccccccccccccc",
+            "profile": "braintrust-spans/1",
+            "record": "c",
+            "native_trace": "native-bt",
+            "native_span": "c",
+            "parents": [],
+            "agent": {
+              "namespace": "lab",
+              "subject": "cara",
+              "principal": null
+            },
+            "policy": {
+              "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+              "version": "policy-1",
+              "decision": "ALLOW"
+            },
+            "offers": [],
+            "accept": {
+              "id": "vld_eeeeeeeeeeeeeeeeeeeee",
+              "parent": {
+                "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                "record": "b",
+                "hash": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec"
+              },
+              "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+            },
+            "attachments": []
+          },
+          "hash": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d"
+        },
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "trace": "vlt_ttttttttttttttttttttt",
+            "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+            "profile": "langsmith-runs/1",
+            "record": "a",
+            "native_trace": "native-ls",
+            "native_span": "a",
+            "parents": [],
+            "agent": {
+              "namespace": "lab",
+              "subject": "alice",
+              "principal": null
+            },
+            "policy": {
+              "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+              "version": "policy-1",
+              "decision": "ALLOW"
+            },
+            "offers": [
+              {
+                "id": "vld_ddddddddddddddddddddd",
+                "child_source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                "child_agent": {
+                  "namespace": "lab",
+                  "subject": "bob",
+                  "principal": null
+                },
+                "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+              }
+            ],
+            "accept": null,
+            "attachments": []
+          },
+          "hash": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+        }
+      ],
+      "origins": [
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+            "stream": "main",
+            "seq": "1",
+            "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+            "step": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354",
+            "key": "vlk_lllllllllllllllllllll"
+          },
+          "hash": "5acf023a71fb64e6eeb39c3114e07955f909486a82c92b438d6cf51b8c1cfb1b",
+          "signature": "ptmgqRvJxwjGG_1Dr31WGjK7PYPLCwiwJ0ARMgz0c6VCYxKdx2yXSE-I4w1RhzM_hV8CpLytHUp6HQH6j0iQDA"
+        },
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+            "stream": "main",
+            "seq": "1",
+            "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+            "step": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+            "key": "vlk_mmmmmmmmmmmmmmmmmmmmm"
+          },
+          "hash": "ea4ca766d5ba35e88d6910724c26469d53f74aa514b3d313063d86707e984786",
+          "signature": "C8xX85pg80z--1AUy_BS-DwGcv695aqb9_8oY_WzJYzky-Oe0zky-9PebwJwLuPPSOMDPhItUTw84ahbabtGAg"
+        },
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "source": "vls_ccccccccccccccccccccc",
+            "stream": "main",
+            "seq": "1",
+            "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+            "step": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+            "key": "vlk_nnnnnnnnnnnnnnnnnnnnn"
+          },
+          "hash": "48cce25040fe8ae56e4f4f9d964e71ec2a37d72dc1e71319399044035ef1bf8d",
+          "signature": "P5YNWe-waZq1zC9EJkvYLjm9rkindMToIrebo9cPVeAZk66LhJiXefaEKt2bUhPGUikQ4QyA8SskOWoVktdrDA"
+        }
+      ],
+      "audit": [
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "seq": "1",
+            "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+            "request": "vlq_000000000000000000000",
+            "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+            "data": {
+              "kind": "WorkspaceCreated",
+              "config": "d10700f0f5189d9059a540c0c54e4442941e8e295eca74934881206edb22f210"
+            }
+          },
+          "hash": "20c27ded4c69442138e2877bbbcbf474fffe6afc6669b852aa1d1864112f26e1",
+          "signature": "ftmsD2c8q0u3lmHF7C7QzBjWz-cvrQL1t7YqDBazoiO6_mVnuanZdy3I9J5c1Dz2kLDXYXe5MSApyoygTVgmDQ"
+        },
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "seq": "2",
+            "prev": "20c27ded4c69442138e2877bbbcbf474fffe6afc6669b852aa1d1864112f26e1",
+            "request": "vlq_111111111111111111111",
+            "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+            "data": {
+              "kind": "SourceRegistered",
+              "source": {
+                "id": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                "profile": "langsmith-runs/1",
+                "namespace": "lab",
+                "project": "ls"
+              }
+            }
+          },
+          "hash": "7b27f200c9a612971168e5c477bd52ab743b8637619be926c447a21ceda8a767",
+          "signature": "bDiB-imtRs74I3QmbOWYEGPBkaI07npEL5XiEe9z9TUUndwVFI403Sg23Y7aSd1EF6-XCsLzTEnJgFaoPZf4CA"
+        },
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "seq": "3",
+            "prev": "7b27f200c9a612971168e5c477bd52ab743b8637619be926c447a21ceda8a767",
+            "request": "vlq_222222222222222222222",
+            "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+            "data": {
+              "kind": "SourceRegistered",
+              "source": {
+                "id": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                "profile": "langfuse-observations/1",
+                "namespace": "lab",
+                "project": "lf"
+              }
+            }
+          },
+          "hash": "12759774a972b2639482e60f1218a9ce084ad3d56762c228914b1be8f2aeae36",
+          "signature": "RmrRo6biz4f4-pyHy0AZafgY7MHQ9WnTlAOz6_jMjlu5Zlthgxlc6p_hf3MoraxLO_lYwJ0YBfww2e0Fl2L_Cw"
+        },
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "seq": "4",
+            "prev": "12759774a972b2639482e60f1218a9ce084ad3d56762c228914b1be8f2aeae36",
+            "request": "vlq_333333333333333333333",
+            "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+            "data": {
+              "kind": "SourceRegistered",
+              "source": {
+                "id": "vls_ccccccccccccccccccccc",
+                "profile": "braintrust-spans/1",
+                "namespace": "lab",
+                "project": "bt"
+              }
+            }
+          },
+          "hash": "dc4f5a3120137188193cbde5323928c7e1a21a4324bf597b6a4aa952c6965134",
+          "signature": "eTtI13enfNAVKNFQuQdW0THNPEVwi6Re8BVTH-t2buYkSNOyoeqx8d_tBTTABmCD7J3WGnXjy22ztdM4hcz5Bw"
+        },
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "seq": "5",
+            "prev": "dc4f5a3120137188193cbde5323928c7e1a21a4324bf597b6a4aa952c6965134",
+            "request": "vlq_444444444444444444444",
+            "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+            "data": {
+              "kind": "TraceCreated",
+              "trace": "vlt_ttttttttttttttttttttt",
+              "graph": "55c6b07ad72ca8913c2667a2a2b019cf668bd6f1f3f0bf96b49a0b77622d5bb6"
+            }
+          },
+          "hash": "5199c6b173c4e9b2c4bec6d982e099456057f2f896495211d18650a9f6c6a00c",
+          "signature": "5eABUhWajvTK17Y6ArW_KQmE6KCll_96A7ZDxMcN7faWhxA9AoV4oXVNablchiVBDd5STS5IWxbg8ij8RvQKAw"
+        },
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "seq": "6",
+            "prev": "5199c6b173c4e9b2c4bec6d982e099456057f2f896495211d18650a9f6c6a00c",
+            "request": "vlq_555555555555555555555",
+            "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+            "data": {
+              "kind": "ImportStaged",
+              "import": "vli_iiiiiiiiiiiiiiiiiiiii",
+              "trace": "vlt_ttttttttttttttttttttt",
+              "batch": "2c7686a3bef575039478fc56d4431a9f1b41d3f9b3fe5382b220407895ccde1c",
+              "rows": 1
+            }
+          },
+          "hash": "da08c308cf79ccc212a4c298a0c99874da3bbd41d18870cb1653328b19aff430",
+          "signature": "jf3kJjtS8vw1M6w_HASVdtKTl5c3ROUQXmua49R6SSp8wWCqWRmS-lXuGzEGVYrLCOTBsmIb3Rkv8QNKM9X8DA"
+        },
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "seq": "7",
+            "prev": "da08c308cf79ccc212a4c298a0c99874da3bbd41d18870cb1653328b19aff430",
+            "request": "vlq_666666666666666666666",
+            "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+            "data": {
+              "kind": "ImportCommitted",
+              "import": "vli_iiiiiiiiiiiiiiiiiiiii",
+              "trace": "vlt_ttttttttttttttttttttt",
+              "revision": "1",
+              "graph": "7cf8d0976563186aa1edee4eb72e2b00d4b76332a5828265f9c9ff4ae04b24f5",
+              "batch": "2c7686a3bef575039478fc56d4431a9f1b41d3f9b3fe5382b220407895ccde1c"
+            }
+          },
+          "hash": "1c50190734e58508bcf3a28e36faf2d2f967a0fe7670f8aca274d5624b065d0b",
+          "signature": "Q0d2VavIU3JAoifoQi4Mur-vmvXb20STXN0Duo692BOgF6XjARDEkd6ea5UtPeEceET8hYiqRukwAqaLlo3aCw"
+        },
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "seq": "8",
+            "prev": "1c50190734e58508bcf3a28e36faf2d2f967a0fe7670f8aca274d5624b065d0b",
+            "request": "vlq_777777777777777777777",
+            "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+            "data": {
+              "kind": "ImportStaged",
+              "import": "vli_jjjjjjjjjjjjjjjjjjjjj",
+              "trace": "vlt_ttttttttttttttttttttt",
+              "batch": "1c61889a83166addd9023b1d4acc32b90685759cf8c31cee64c803652233da9a",
+              "rows": 1
+            }
+          },
+          "hash": "5888847cf9e1a3b7e2ae81efdcf46e75e93fdf19f920896dcea6ba1e36200424",
+          "signature": "N05zxVGz488JBnUMFe0x7IqEviU2PfPFoAIHOWsz1fyOcYe1uHmlHcL9f59r_z1_ImaNIKiBwVzGbqjdCoplBA"
+        },
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "seq": "9",
+            "prev": "5888847cf9e1a3b7e2ae81efdcf46e75e93fdf19f920896dcea6ba1e36200424",
+            "request": "vlq_888888888888888888888",
+            "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+            "data": {
+              "kind": "ImportCommitted",
+              "import": "vli_jjjjjjjjjjjjjjjjjjjjj",
+              "trace": "vlt_ttttttttttttttttttttt",
+              "revision": "2",
+              "graph": "b87cc1efd7f6c0a43964e5c0388fc4a071f7dbcf4a5ce1aa040c1a5bc6eea665",
+              "batch": "1c61889a83166addd9023b1d4acc32b90685759cf8c31cee64c803652233da9a"
+            }
+          },
+          "hash": "c97f8d8c3d6394bb5ffd3a4ae7001d2381465df5d172ebb2a63e7425dcf7b027",
+          "signature": "Qq6y2w1eQcn6d74wnoNUNWUEi4y58cImGKMGfb1-vuf-yZP83D3zyDW3SwEHcmmU4i--2YJBJK2tGjtuKEoHBQ"
+        },
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "seq": "10",
+            "prev": "c97f8d8c3d6394bb5ffd3a4ae7001d2381465df5d172ebb2a63e7425dcf7b027",
+            "request": "vlq_999999999999999999999",
+            "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+            "data": {
+              "kind": "ImportStaged",
+              "import": "vli_hhhhhhhhhhhhhhhhhhhhh",
+              "trace": "vlt_ttttttttttttttttttttt",
+              "batch": "c403d5aa9d261d83dafd77e60c6e088490066e6e3e45be2738135eb655943fcc",
+              "rows": 1
+            }
+          },
+          "hash": "d1776bbcacd86e8836ac5bb92a733d2496163f5d9ac14bc0ca1251ee4ffafc68",
+          "signature": "b06MP_7Kwx3koRDtzOx_mB1d5lgnr-8x5t98UCm53HhN3ClsMEJPb_PE0d2AzqcF-QGziUBAwNr6XdSf3Kw_AA"
+        },
+        {
+          "body": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "seq": "11",
+            "prev": "d1776bbcacd86e8836ac5bb92a733d2496163f5d9ac14bc0ca1251ee4ffafc68",
+            "request": "vlq_AAAAAAAAAAAAAAAAAAAAA",
+            "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+            "data": {
+              "kind": "ImportCommitted",
+              "import": "vli_hhhhhhhhhhhhhhhhhhhhh",
+              "trace": "vlt_ttttttttttttttttttttt",
+              "revision": "3",
+              "graph": "254266ac6c98e6250badf6de27c4afdf2e2a32284e4bdb79210aa8b18f5c720a",
+              "batch": "c403d5aa9d261d83dafd77e60c6e088490066e6e3e45be2738135eb655943fcc"
+            }
+          },
+          "hash": "a6e7e24ea1663506055fcfe20cfaf08ed0aaf377850f5af33d4e60bb4d877bd6",
+          "signature": "JiBSvfz-YetQuV9to352B9o2iL2cF_LKmEdvvjibVIkWebgGWL-pXUMq3uLUcutvyvy4uDByE2QR654YRAsRCw"
+        }
+      ],
+      "attachments": []
+    },
+    "sunlight": {
+      "v": 1,
+      "kind": "action-lineage",
+      "format": "vislineage-bundle/1",
+      "bundle": "d0297474ddc9c378f7e0b16537fa1d702bd2cb160fceaa75832cb4937578ecfa",
+      "action": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+      "trace": "vlt_ttttttttttttttttttttt",
+      "graph": "254266ac6c98e6250badf6de27c4afdf2e2a32284e4bdb79210aa8b18f5c720a",
+      "disclosure": "NORMALIZED_ONLY",
+      "semantics": "NOT_VERIFIED"
+    },
+    "trust": {
+      "v": 1,
+      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+      "keys": [
+        {
+          "id": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+          "public": "11l5O7wTooGagnx2rbb7qKSa7gB_SfLQmS2ZuCWtLEg",
+          "role": "audit",
+          "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+          "source": null,
+          "stream": null,
+          "first_seq": "1",
+          "last_seq": "11",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "vlk_lllllllllllllllllllll",
+          "public": "0EqyMnQrtKs6E2i9RhXk5tAiSrcaAWuvhSCjMsl3hzc",
+          "role": "origin",
+          "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+          "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+          "stream": "main",
+          "first_seq": "1",
+          "last_seq": "1",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "vlk_mmmmmmmmmmmmmmmmmmmmm",
+          "public": "oJql9HpnWYAv-VX43C0qFKXJnSO-l_hkEn_5ODRVpPA",
+          "role": "origin",
+          "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+          "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+          "stream": "main",
+          "first_seq": "1",
+          "last_seq": "1",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "vlk_nnnnnnnnnnnnnnnnnnnnn",
+          "public": "F8t5-ytBIPKx7GXkGY1uCLKOgT_rAeSkAIObheGAgM4",
+          "role": "origin",
+          "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+          "source": "vls_ccccccccccccccccccccc",
+          "stream": "main",
+          "first_seq": "1",
+          "last_seq": "1",
+          "status": "ACTIVE"
+        }
+      ],
+      "heads": [
+        {
+          "role": "audit",
+          "source": null,
+          "stream": null,
+          "seq": "11",
+          "hash": "a6e7e24ea1663506055fcfe20cfaf08ed0aaf377850f5af33d4e60bb4d877bd6"
+        },
+        {
+          "role": "origin",
+          "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+          "stream": "main",
+          "seq": "1",
+          "hash": "5acf023a71fb64e6eeb39c3114e07955f909486a82c92b438d6cf51b8c1cfb1b"
+        },
+        {
+          "role": "origin",
+          "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+          "stream": "main",
+          "seq": "1",
+          "hash": "ea4ca766d5ba35e88d6910724c26469d53f74aa514b3d313063d86707e984786"
+        },
+        {
+          "role": "origin",
+          "source": "vls_ccccccccccccccccccccc",
+          "stream": "main",
+          "seq": "1",
+          "hash": "48cce25040fe8ae56e4f4f9d964e71ec2a37d72dc1e71319399044035ef1bf8d"
+        }
+      ]
+    },
+    "verification": {
+      "integrity": "VALID",
+      "structural": "COMPLETE_RELATIVE",
+      "origin": "TRUSTED_AT_PIN",
+      "audit": "TRUSTED_AT_PIN",
+      "disclosure": "NORMALIZED_ONLY",
+      "semantics": "NOT_VERIFIED",
+      "current_authority": "UNKNOWN",
+      "reasons": []
+    }
+  },
+  "examples": [
+    {
+      "request": {
+        "id": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+        "method": "source.register",
+        "params": {
+          "id": "vls_aaaaaaaaaaaaaaaaaaaaa",
+          "profile": "langsmith-runs/1",
+          "namespace": "lab",
+          "project": "ls"
+        }
+      },
+      "response": {
+        "id": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+        "ok": true,
+        "result": {
+          "id": "vls_aaaaaaaaaaaaaaaaaaaaa",
+          "profile": "langsmith-runs/1",
+          "namespace": "lab",
+          "project": "ls"
+        }
+      }
+    },
+    {
+      "request": {
+        "id": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+        "method": "source.list",
+        "params": {}
+      },
+      "response": {
+        "id": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+        "ok": true,
+        "result": {
+          "sources": [
+            {
+              "id": "vls_aaaaaaaaaaaaaaaaaaaaa",
+              "profile": "langsmith-runs/1",
+              "namespace": "lab",
+              "project": "ls"
+            },
+            {
+              "id": "vls_bbbbbbbbbbbbbbbbbbbbb",
+              "profile": "langfuse-observations/1",
+              "namespace": "lab",
+              "project": "lf"
+            },
+            {
+              "id": "vls_ccccccccccccccccccccc",
+              "profile": "braintrust-spans/1",
+              "namespace": "lab",
+              "project": "bt"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "id": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+        "method": "trace.create",
+        "params": {
+          "trace": "vlt_ttttttttttttttttttttt"
+        }
+      },
+      "response": {
+        "id": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+        "ok": true,
+        "result": {
+          "id": "vlt_ttttttttttttttttttttt",
+          "revision": "0",
+          "graph": "55c6b07ad72ca8913c2667a2a2b019cf668bd6f1f3f0bf96b49a0b77622d5bb6"
+        }
+      }
+    },
+    {
+      "request": {
+        "id": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+        "method": "trace.get",
+        "params": {
+          "trace": "vlt_ttttttttttttttttttttt"
+        }
+      },
+      "response": {
+        "id": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+        "ok": true,
+        "result": {
+          "id": "vlt_ttttttttttttttttttttt",
+          "revision": "3",
+          "graph": "254266ac6c98e6250badf6de27c4afdf2e2a32284e4bdb79210aa8b18f5c720a"
+        }
+      }
+    },
+    {
+      "request": {
+        "id": "vlq_555555555555555555555",
+        "method": "import.stage",
+        "params": {
+          "import": "vli_iiiiiiiiiiiiiiiiiiiii",
+          "trace": "vlt_ttttttttttttttttttttt",
+          "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+          "rows": [
+            {
+              "id": "a",
+              "trace_id": "native-ls",
+              "parent_run_id": null,
+              "extra": {
+                "metadata": {
+                  "vislineage": {
+                    "v": 1,
+                    "trace_id": "vlt_ttttttttttttttttttttt",
+                    "agent": {
+                      "namespace": "lab",
+                      "subject": "alice",
+                      "principal": null
+                    },
+                    "policy": {
+                      "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                      "version": "policy-1",
+                      "decision": "ALLOW"
+                    },
+                    "offers": [
+                      {
+                        "id": "vld_ddddddddddddddddddddd",
+                        "child_source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                        "child_agent": {
+                          "namespace": "lab",
+                          "subject": "bob",
+                          "principal": null
+                        },
+                        "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                      }
+                    ],
+                    "accept": null,
+                    "attachments": []
+                  }
+                }
+              }
+            }
+          ],
+          "origins": [
+            {
+              "body": {
+                "v": 1,
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                "stream": "main",
+                "seq": "1",
+                "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                "step": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354",
+                "key": "vlk_lllllllllllllllllllll"
+              },
+              "hash": "5acf023a71fb64e6eeb39c3114e07955f909486a82c92b438d6cf51b8c1cfb1b",
+              "signature": "ptmgqRvJxwjGG_1Dr31WGjK7PYPLCwiwJ0ARMgz0c6VCYxKdx2yXSE-I4w1RhzM_hV8CpLytHUp6HQH6j0iQDA"
+            }
+          ],
+          "artifacts": []
+        }
+      },
+      "response": {
+        "id": "vlq_555555555555555555555",
+        "ok": true,
+        "result": {
+          "import": "vli_iiiiiiiiiiiiiiiiiiiii",
+          "state": "STAGED",
+          "batch": "2c7686a3bef575039478fc56d4431a9f1b41d3f9b3fe5382b220407895ccde1c",
+          "rows": 1,
+          "warnings": []
+        }
+      }
+    },
+    {
+      "request": {
+        "id": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+        "method": "import.get",
+        "params": {
+          "import": "vli_iiiiiiiiiiiiiiiiiiiii"
+        }
+      },
+      "response": {
+        "id": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+        "ok": true,
+        "result": {
+          "import": "vli_iiiiiiiiiiiiiiiiiiiii",
+          "state": "STAGED",
+          "batch": "2c7686a3bef575039478fc56d4431a9f1b41d3f9b3fe5382b220407895ccde1c",
+          "commit": null,
+          "reason": null
+        }
+      }
+    },
+    {
+      "request": {
+        "id": "vlq_666666666666666666666",
+        "method": "import.commit",
+        "params": {
+          "import": "vli_iiiiiiiiiiiiiiiiiiiii",
+          "expected_revision": "0"
+        }
+      },
+      "response": {
+        "id": "vlq_666666666666666666666",
+        "ok": true,
+        "result": {
+          "import": "vli_iiiiiiiiiiiiiiiiiiiii",
+          "state": "COMMITTED",
+          "trace": "vlt_ttttttttttttttttttttt",
+          "revision": "1",
+          "graph": "7cf8d0976563186aa1edee4eb72e2b00d4b76332a5828265f9c9ff4ae04b24f5",
+          "added": 1,
+          "duplicates": 0,
+          "conflicts": 0,
+          "audit": "1c50190734e58508bcf3a28e36faf2d2f967a0fe7670f8aca274d5624b065d0b"
+        }
+      }
+    },
+    {
+      "request": {
+        "id": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+        "method": "import.cancel",
+        "params": {
+          "import": "vli_iiiiiiiiiiiiiiiiiiiii"
+        }
+      },
+      "response": {
+        "id": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+        "ok": true,
+        "result": {
+          "import": "vli_iiiiiiiiiiiiiiiiiiiii",
+          "state": "CANCELLED"
+        }
+      }
+    },
+    {
+      "request": {
+        "id": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+        "method": "path.get",
+        "params": {
+          "trace": "vlt_ttttttttttttttttttttt",
+          "revision": "3",
+          "action": {
+            "source": "vls_ccccccccccccccccccccc",
+            "record": "c"
+          },
+          "max_depth": 256,
+          "max_nodes": 4096
+        }
+      },
+      "response": {
+        "id": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+        "ok": true,
+        "result": {
+          "trace": "vlt_ttttttttttttttttttttt",
+          "revision": "3",
+          "graph": "254266ac6c98e6250badf6de27c4afdf2e2a32284e4bdb79210aa8b18f5c720a",
+          "action": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+          "steps": [
+            {
+              "body": {
+                "v": 1,
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "trace": "vlt_ttttttttttttttttttttt",
+                "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                "profile": "langsmith-runs/1",
+                "record": "a",
+                "native_trace": "native-ls",
+                "native_span": "a",
+                "parents": [],
+                "agent": {
+                  "namespace": "lab",
+                  "subject": "alice",
+                  "principal": null
+                },
+                "policy": {
+                  "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                  "version": "policy-1",
+                  "decision": "ALLOW"
+                },
+                "offers": [
+                  {
+                    "id": "vld_ddddddddddddddddddddd",
+                    "child_source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                    "child_agent": {
+                      "namespace": "lab",
+                      "subject": "bob",
+                      "principal": null
+                    },
+                    "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                  }
+                ],
+                "accept": null,
+                "attachments": []
+              },
+              "hash": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+            },
+            {
+              "body": {
+                "v": 1,
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "trace": "vlt_ttttttttttttttttttttt",
+                "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                "profile": "langfuse-observations/1",
+                "record": "b",
+                "native_trace": "native-lf",
+                "native_span": "b",
+                "parents": [],
+                "agent": {
+                  "namespace": "lab",
+                  "subject": "bob",
+                  "principal": null
+                },
+                "policy": {
+                  "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                  "version": "policy-1",
+                  "decision": "ALLOW"
+                },
+                "offers": [
+                  {
+                    "id": "vld_eeeeeeeeeeeeeeeeeeeee",
+                    "child_source": "vls_ccccccccccccccccccccc",
+                    "child_agent": {
+                      "namespace": "lab",
+                      "subject": "cara",
+                      "principal": null
+                    },
+                    "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                  }
+                ],
+                "accept": {
+                  "id": "vld_ddddddddddddddddddddd",
+                  "parent": {
+                    "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                    "record": "a",
+                    "hash": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+                  },
+                  "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                },
+                "attachments": []
+              },
+              "hash": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec"
+            },
+            {
+              "body": {
+                "v": 1,
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "trace": "vlt_ttttttttttttttttttttt",
+                "source": "vls_ccccccccccccccccccccc",
+                "profile": "braintrust-spans/1",
+                "record": "c",
+                "native_trace": "native-bt",
+                "native_span": "c",
+                "parents": [],
+                "agent": {
+                  "namespace": "lab",
+                  "subject": "cara",
+                  "principal": null
+                },
+                "policy": {
+                  "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                  "version": "policy-1",
+                  "decision": "ALLOW"
+                },
+                "offers": [],
+                "accept": {
+                  "id": "vld_eeeeeeeeeeeeeeeeeeeee",
+                  "parent": {
+                    "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                    "record": "b",
+                    "hash": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec"
+                  },
+                  "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                },
+                "attachments": []
+              },
+              "hash": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d"
+            }
+          ],
+          "origins": [
+            {
+              "body": {
+                "v": 1,
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                "stream": "main",
+                "seq": "1",
+                "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                "step": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354",
+                "key": "vlk_lllllllllllllllllllll"
+              },
+              "hash": "5acf023a71fb64e6eeb39c3114e07955f909486a82c92b438d6cf51b8c1cfb1b",
+              "signature": "ptmgqRvJxwjGG_1Dr31WGjK7PYPLCwiwJ0ARMgz0c6VCYxKdx2yXSE-I4w1RhzM_hV8CpLytHUp6HQH6j0iQDA"
+            },
+            {
+              "body": {
+                "v": 1,
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                "stream": "main",
+                "seq": "1",
+                "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                "step": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+                "key": "vlk_mmmmmmmmmmmmmmmmmmmmm"
+              },
+              "hash": "ea4ca766d5ba35e88d6910724c26469d53f74aa514b3d313063d86707e984786",
+              "signature": "C8xX85pg80z--1AUy_BS-DwGcv695aqb9_8oY_WzJYzky-Oe0zky-9PebwJwLuPPSOMDPhItUTw84ahbabtGAg"
+            },
+            {
+              "body": {
+                "v": 1,
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "source": "vls_ccccccccccccccccccccc",
+                "stream": "main",
+                "seq": "1",
+                "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                "step": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+                "key": "vlk_nnnnnnnnnnnnnnnnnnnnn"
+              },
+              "hash": "48cce25040fe8ae56e4f4f9d964e71ec2a37d72dc1e71319399044035ef1bf8d",
+              "signature": "P5YNWe-waZq1zC9EJkvYLjm9rkindMToIrebo9cPVeAZk66LhJiXefaEKt2bUhPGUikQ4QyA8SskOWoVktdrDA"
+            }
+          ],
+          "edges": [
+            {
+              "body": {
+                "v": 1,
+                "trace": "vlt_ttttttttttttttttttttt",
+                "parent": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+                "child": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+                "kind": "DELEGATES",
+                "delegation": "vld_eeeeeeeeeeeeeeeeeeeee",
+                "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+              },
+              "hash": "54d475d707825ef815312d5e1705f2fa909a92fd72757fa62940ebcf342d45d1"
+            },
+            {
+              "body": {
+                "v": 1,
+                "trace": "vlt_ttttttttttttttttttttt",
+                "parent": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354",
+                "child": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+                "kind": "DELEGATES",
+                "delegation": "vld_ddddddddddddddddddddd",
+                "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+              },
+              "hash": "ebfd733000e75231951c0cff713e69f5f109caf60ee9c1e8e5fe254c63516ae5"
+            }
+          ],
+          "gaps": [],
+          "structural": "COMPLETE_RELATIVE",
+          "evidence": "CLAIMED",
+          "disclosure": "NORMALIZED_ONLY"
+        }
+      }
+    },
+    {
+      "request": {
+        "id": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+        "method": "bundle.export",
+        "params": {
+          "path": {
+            "trace": "vlt_ttttttttttttttttttttt",
+            "revision": "3",
+            "action": {
+              "source": "vls_ccccccccccccccccccccc",
+              "record": "c"
+            },
+            "max_depth": 256,
+            "max_nodes": 4096
+          },
+          "attachments": "OMIT"
+        }
+      },
+      "response": {
+        "id": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+        "ok": true,
+        "result": {
+          "bundle": {
+            "body": {
+              "v": 1,
+              "format": "vislineage-bundle/1",
+              "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+              "trace": "vlt_ttttttttttttttttttttt",
+              "revision": "3",
+              "graph": {
+                "v": 1,
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "trace": "vlt_ttttttttttttttttttttt",
+                "steps": [
+                  "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+                  "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+                  "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+                ],
+                "origins": [
+                  "48cce25040fe8ae56e4f4f9d964e71ec2a37d72dc1e71319399044035ef1bf8d",
+                  "5acf023a71fb64e6eeb39c3114e07955f909486a82c92b438d6cf51b8c1cfb1b",
+                  "ea4ca766d5ba35e88d6910724c26469d53f74aa514b3d313063d86707e984786"
+                ],
+                "edges": [
+                  "54d475d707825ef815312d5e1705f2fa909a92fd72757fa62940ebcf342d45d1",
+                  "ebfd733000e75231951c0cff713e69f5f109caf60ee9c1e8e5fe254c63516ae5"
+                ],
+                "gaps": []
+              },
+              "path_request": {
+                "trace": "vlt_ttttttttttttttttttttt",
+                "revision": "3",
+                "action": {
+                  "source": "vls_ccccccccccccccccccccc",
+                  "record": "c"
+                },
+                "max_depth": 256,
+                "max_nodes": 4096
+              },
+              "path": {
+                "trace": "vlt_ttttttttttttttttttttt",
+                "revision": "3",
+                "graph": "254266ac6c98e6250badf6de27c4afdf2e2a32284e4bdb79210aa8b18f5c720a",
+                "action": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+                "steps": [
+                  {
+                    "body": {
+                      "v": 1,
+                      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                      "trace": "vlt_ttttttttttttttttttttt",
+                      "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                      "profile": "langsmith-runs/1",
+                      "record": "a",
+                      "native_trace": "native-ls",
+                      "native_span": "a",
+                      "parents": [],
+                      "agent": {
+                        "namespace": "lab",
+                        "subject": "alice",
+                        "principal": null
+                      },
+                      "policy": {
+                        "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                        "version": "policy-1",
+                        "decision": "ALLOW"
+                      },
+                      "offers": [
+                        {
+                          "id": "vld_ddddddddddddddddddddd",
+                          "child_source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                          "child_agent": {
+                            "namespace": "lab",
+                            "subject": "bob",
+                            "principal": null
+                          },
+                          "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                        }
+                      ],
+                      "accept": null,
+                      "attachments": []
+                    },
+                    "hash": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+                  },
+                  {
+                    "body": {
+                      "v": 1,
+                      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                      "trace": "vlt_ttttttttttttttttttttt",
+                      "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                      "profile": "langfuse-observations/1",
+                      "record": "b",
+                      "native_trace": "native-lf",
+                      "native_span": "b",
+                      "parents": [],
+                      "agent": {
+                        "namespace": "lab",
+                        "subject": "bob",
+                        "principal": null
+                      },
+                      "policy": {
+                        "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                        "version": "policy-1",
+                        "decision": "ALLOW"
+                      },
+                      "offers": [
+                        {
+                          "id": "vld_eeeeeeeeeeeeeeeeeeeee",
+                          "child_source": "vls_ccccccccccccccccccccc",
+                          "child_agent": {
+                            "namespace": "lab",
+                            "subject": "cara",
+                            "principal": null
+                          },
+                          "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                        }
+                      ],
+                      "accept": {
+                        "id": "vld_ddddddddddddddddddddd",
+                        "parent": {
+                          "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                          "record": "a",
+                          "hash": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+                        },
+                        "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                      },
+                      "attachments": []
+                    },
+                    "hash": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec"
+                  },
+                  {
+                    "body": {
+                      "v": 1,
+                      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                      "trace": "vlt_ttttttttttttttttttttt",
+                      "source": "vls_ccccccccccccccccccccc",
+                      "profile": "braintrust-spans/1",
+                      "record": "c",
+                      "native_trace": "native-bt",
+                      "native_span": "c",
+                      "parents": [],
+                      "agent": {
+                        "namespace": "lab",
+                        "subject": "cara",
+                        "principal": null
+                      },
+                      "policy": {
+                        "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                        "version": "policy-1",
+                        "decision": "ALLOW"
+                      },
+                      "offers": [],
+                      "accept": {
+                        "id": "vld_eeeeeeeeeeeeeeeeeeeee",
+                        "parent": {
+                          "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                          "record": "b",
+                          "hash": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec"
+                        },
+                        "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                      },
+                      "attachments": []
+                    },
+                    "hash": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d"
+                  }
+                ],
+                "origins": [
+                  {
+                    "body": {
+                      "v": 1,
+                      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                      "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                      "stream": "main",
+                      "seq": "1",
+                      "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                      "step": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354",
+                      "key": "vlk_lllllllllllllllllllll"
+                    },
+                    "hash": "5acf023a71fb64e6eeb39c3114e07955f909486a82c92b438d6cf51b8c1cfb1b",
+                    "signature": "ptmgqRvJxwjGG_1Dr31WGjK7PYPLCwiwJ0ARMgz0c6VCYxKdx2yXSE-I4w1RhzM_hV8CpLytHUp6HQH6j0iQDA"
+                  },
+                  {
+                    "body": {
+                      "v": 1,
+                      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                      "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                      "stream": "main",
+                      "seq": "1",
+                      "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                      "step": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+                      "key": "vlk_mmmmmmmmmmmmmmmmmmmmm"
+                    },
+                    "hash": "ea4ca766d5ba35e88d6910724c26469d53f74aa514b3d313063d86707e984786",
+                    "signature": "C8xX85pg80z--1AUy_BS-DwGcv695aqb9_8oY_WzJYzky-Oe0zky-9PebwJwLuPPSOMDPhItUTw84ahbabtGAg"
+                  },
+                  {
+                    "body": {
+                      "v": 1,
+                      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                      "source": "vls_ccccccccccccccccccccc",
+                      "stream": "main",
+                      "seq": "1",
+                      "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                      "step": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+                      "key": "vlk_nnnnnnnnnnnnnnnnnnnnn"
+                    },
+                    "hash": "48cce25040fe8ae56e4f4f9d964e71ec2a37d72dc1e71319399044035ef1bf8d",
+                    "signature": "P5YNWe-waZq1zC9EJkvYLjm9rkindMToIrebo9cPVeAZk66LhJiXefaEKt2bUhPGUikQ4QyA8SskOWoVktdrDA"
+                  }
+                ],
+                "edges": [
+                  {
+                    "body": {
+                      "v": 1,
+                      "trace": "vlt_ttttttttttttttttttttt",
+                      "parent": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+                      "child": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+                      "kind": "DELEGATES",
+                      "delegation": "vld_eeeeeeeeeeeeeeeeeeeee",
+                      "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                    },
+                    "hash": "54d475d707825ef815312d5e1705f2fa909a92fd72757fa62940ebcf342d45d1"
+                  },
+                  {
+                    "body": {
+                      "v": 1,
+                      "trace": "vlt_ttttttttttttttttttttt",
+                      "parent": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354",
+                      "child": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+                      "kind": "DELEGATES",
+                      "delegation": "vld_ddddddddddddddddddddd",
+                      "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                    },
+                    "hash": "ebfd733000e75231951c0cff713e69f5f109caf60ee9c1e8e5fe254c63516ae5"
+                  }
+                ],
+                "gaps": [],
+                "structural": "COMPLETE_RELATIVE",
+                "evidence": "CLAIMED",
+                "disclosure": "NORMALIZED_ONLY"
+              },
+              "inventory": [
+                {
+                  "kind": "audit",
+                  "digest": "0ed47872174dc6fa0b06f43a11205b631d95dc318e0d8e60612d0b3ab69113cd",
+                  "bytes": "535"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "55286590957f4740ca3937fca48353124eb33d6bccfea908060d97332d54b6d3",
+                  "bytes": "498"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "5e4ec09fe70e4663e9e15c7fe425761958eb1a3390a60580bcf685553e8fc175",
+                  "bytes": "575"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "61dfd67b1769c250497cf4235b0fb6452a467daac342b8f5ad096218ac6ae469",
+                  "bytes": "575"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "646b20e6d2bb84ca227df43dfd0d4bdf97ec3b3e1961e680e198cdf14193e4e2",
+                  "bytes": "529"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "7dcbe147c3025117cb45353c9ce288b0f418161fb15703495d77c82992622bd6",
+                  "bytes": "660"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "a466bac61788e65d8c8788e8e6c5d50389bacb2a537bc65ffe194cdba4721edb",
+                  "bytes": "528"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "ae093406a1c274b9fbd0aa2827c9bca219d6107fc28552623bf3586d986675d2",
+                  "bytes": "530"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "e72da98f1485b856434faa565d97d7d18156206f346e715939bfba1d92aeb3d0",
+                  "bytes": "659"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "f7d45ee72b8c71074100aa5e06e0c15e965c73654f8b9e7e599f1ae034b4b6b4",
+                  "bytes": "659"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "fee4e9ba36e34a8fb9682247f726867c07aab3814d5b8cdb975d4fd37afdbdf8",
+                  "bytes": "576"
+                },
+                {
+                  "kind": "origin",
+                  "digest": "2427577ecbc7af574b6844fd5eb80b3361d6b16f6b75dd8b650ee5693a49d215",
+                  "bytes": "476"
+                },
+                {
+                  "kind": "origin",
+                  "digest": "6022cea06a74bb10904c48cce9efa59abd0cf1f60d552996097f04a7aa3a0188",
+                  "bytes": "476"
+                },
+                {
+                  "kind": "origin",
+                  "digest": "f2caa7e1fb413f54b7fc708790af90a28429f7dec649ba1d8323042d89cf4153",
+                  "bytes": "476"
+                },
+                {
+                  "kind": "step",
+                  "digest": "2de97b5e20c08ed18751293f0705bfceae8bccdb4357a56f675edc8c7ea10086",
+                  "bytes": "777"
+                },
+                {
+                  "kind": "step",
+                  "digest": "7fd094ccd9ea665749c00e0cffa0c0420eaae6f1ab8904cb5fb88a682548b41b",
+                  "bytes": "1001"
+                },
+                {
+                  "kind": "step",
+                  "digest": "e70289bd68de1514488df10d25147289ef7555ff0571d91ec208290f1e1af497",
+                  "bytes": "755"
+                }
+              ],
+              "attachment_policy": "OMIT",
+              "disclosure": "NORMALIZED_ONLY",
+              "trust_required": true
+            },
+            "hash": "d0297474ddc9c378f7e0b16537fa1d702bd2cb160fceaa75832cb4937578ecfa",
+            "steps": [
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "trace": "vlt_ttttttttttttttttttttt",
+                  "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                  "profile": "langfuse-observations/1",
+                  "record": "b",
+                  "native_trace": "native-lf",
+                  "native_span": "b",
+                  "parents": [],
+                  "agent": {
+                    "namespace": "lab",
+                    "subject": "bob",
+                    "principal": null
+                  },
+                  "policy": {
+                    "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                    "version": "policy-1",
+                    "decision": "ALLOW"
+                  },
+                  "offers": [
+                    {
+                      "id": "vld_eeeeeeeeeeeeeeeeeeeee",
+                      "child_source": "vls_ccccccccccccccccccccc",
+                      "child_agent": {
+                        "namespace": "lab",
+                        "subject": "cara",
+                        "principal": null
+                      },
+                      "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                    }
+                  ],
+                  "accept": {
+                    "id": "vld_ddddddddddddddddddddd",
+                    "parent": {
+                      "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                      "record": "a",
+                      "hash": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+                    },
+                    "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                  },
+                  "attachments": []
+                },
+                "hash": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "trace": "vlt_ttttttttttttttttttttt",
+                  "source": "vls_ccccccccccccccccccccc",
+                  "profile": "braintrust-spans/1",
+                  "record": "c",
+                  "native_trace": "native-bt",
+                  "native_span": "c",
+                  "parents": [],
+                  "agent": {
+                    "namespace": "lab",
+                    "subject": "cara",
+                    "principal": null
+                  },
+                  "policy": {
+                    "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                    "version": "policy-1",
+                    "decision": "ALLOW"
+                  },
+                  "offers": [],
+                  "accept": {
+                    "id": "vld_eeeeeeeeeeeeeeeeeeeee",
+                    "parent": {
+                      "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                      "record": "b",
+                      "hash": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec"
+                    },
+                    "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                  },
+                  "attachments": []
+                },
+                "hash": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "trace": "vlt_ttttttttttttttttttttt",
+                  "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                  "profile": "langsmith-runs/1",
+                  "record": "a",
+                  "native_trace": "native-ls",
+                  "native_span": "a",
+                  "parents": [],
+                  "agent": {
+                    "namespace": "lab",
+                    "subject": "alice",
+                    "principal": null
+                  },
+                  "policy": {
+                    "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                    "version": "policy-1",
+                    "decision": "ALLOW"
+                  },
+                  "offers": [
+                    {
+                      "id": "vld_ddddddddddddddddddddd",
+                      "child_source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                      "child_agent": {
+                        "namespace": "lab",
+                        "subject": "bob",
+                        "principal": null
+                      },
+                      "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                    }
+                  ],
+                  "accept": null,
+                  "attachments": []
+                },
+                "hash": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+              }
+            ],
+            "origins": [
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                  "stream": "main",
+                  "seq": "1",
+                  "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                  "step": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354",
+                  "key": "vlk_lllllllllllllllllllll"
+                },
+                "hash": "5acf023a71fb64e6eeb39c3114e07955f909486a82c92b438d6cf51b8c1cfb1b",
+                "signature": "ptmgqRvJxwjGG_1Dr31WGjK7PYPLCwiwJ0ARMgz0c6VCYxKdx2yXSE-I4w1RhzM_hV8CpLytHUp6HQH6j0iQDA"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                  "stream": "main",
+                  "seq": "1",
+                  "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                  "step": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+                  "key": "vlk_mmmmmmmmmmmmmmmmmmmmm"
+                },
+                "hash": "ea4ca766d5ba35e88d6910724c26469d53f74aa514b3d313063d86707e984786",
+                "signature": "C8xX85pg80z--1AUy_BS-DwGcv695aqb9_8oY_WzJYzky-Oe0zky-9PebwJwLuPPSOMDPhItUTw84ahbabtGAg"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "source": "vls_ccccccccccccccccccccc",
+                  "stream": "main",
+                  "seq": "1",
+                  "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                  "step": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+                  "key": "vlk_nnnnnnnnnnnnnnnnnnnnn"
+                },
+                "hash": "48cce25040fe8ae56e4f4f9d964e71ec2a37d72dc1e71319399044035ef1bf8d",
+                "signature": "P5YNWe-waZq1zC9EJkvYLjm9rkindMToIrebo9cPVeAZk66LhJiXefaEKt2bUhPGUikQ4QyA8SskOWoVktdrDA"
+              }
+            ],
+            "audit": [
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "1",
+                  "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                  "request": "vlq_000000000000000000000",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "WorkspaceCreated",
+                    "config": "d10700f0f5189d9059a540c0c54e4442941e8e295eca74934881206edb22f210"
+                  }
+                },
+                "hash": "20c27ded4c69442138e2877bbbcbf474fffe6afc6669b852aa1d1864112f26e1",
+                "signature": "ftmsD2c8q0u3lmHF7C7QzBjWz-cvrQL1t7YqDBazoiO6_mVnuanZdy3I9J5c1Dz2kLDXYXe5MSApyoygTVgmDQ"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "2",
+                  "prev": "20c27ded4c69442138e2877bbbcbf474fffe6afc6669b852aa1d1864112f26e1",
+                  "request": "vlq_111111111111111111111",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "SourceRegistered",
+                    "source": {
+                      "id": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                      "profile": "langsmith-runs/1",
+                      "namespace": "lab",
+                      "project": "ls"
+                    }
+                  }
+                },
+                "hash": "7b27f200c9a612971168e5c477bd52ab743b8637619be926c447a21ceda8a767",
+                "signature": "bDiB-imtRs74I3QmbOWYEGPBkaI07npEL5XiEe9z9TUUndwVFI403Sg23Y7aSd1EF6-XCsLzTEnJgFaoPZf4CA"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "3",
+                  "prev": "7b27f200c9a612971168e5c477bd52ab743b8637619be926c447a21ceda8a767",
+                  "request": "vlq_222222222222222222222",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "SourceRegistered",
+                    "source": {
+                      "id": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                      "profile": "langfuse-observations/1",
+                      "namespace": "lab",
+                      "project": "lf"
+                    }
+                  }
+                },
+                "hash": "12759774a972b2639482e60f1218a9ce084ad3d56762c228914b1be8f2aeae36",
+                "signature": "RmrRo6biz4f4-pyHy0AZafgY7MHQ9WnTlAOz6_jMjlu5Zlthgxlc6p_hf3MoraxLO_lYwJ0YBfww2e0Fl2L_Cw"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "4",
+                  "prev": "12759774a972b2639482e60f1218a9ce084ad3d56762c228914b1be8f2aeae36",
+                  "request": "vlq_333333333333333333333",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "SourceRegistered",
+                    "source": {
+                      "id": "vls_ccccccccccccccccccccc",
+                      "profile": "braintrust-spans/1",
+                      "namespace": "lab",
+                      "project": "bt"
+                    }
+                  }
+                },
+                "hash": "dc4f5a3120137188193cbde5323928c7e1a21a4324bf597b6a4aa952c6965134",
+                "signature": "eTtI13enfNAVKNFQuQdW0THNPEVwi6Re8BVTH-t2buYkSNOyoeqx8d_tBTTABmCD7J3WGnXjy22ztdM4hcz5Bw"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "5",
+                  "prev": "dc4f5a3120137188193cbde5323928c7e1a21a4324bf597b6a4aa952c6965134",
+                  "request": "vlq_444444444444444444444",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "TraceCreated",
+                    "trace": "vlt_ttttttttttttttttttttt",
+                    "graph": "55c6b07ad72ca8913c2667a2a2b019cf668bd6f1f3f0bf96b49a0b77622d5bb6"
+                  }
+                },
+                "hash": "5199c6b173c4e9b2c4bec6d982e099456057f2f896495211d18650a9f6c6a00c",
+                "signature": "5eABUhWajvTK17Y6ArW_KQmE6KCll_96A7ZDxMcN7faWhxA9AoV4oXVNablchiVBDd5STS5IWxbg8ij8RvQKAw"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "6",
+                  "prev": "5199c6b173c4e9b2c4bec6d982e099456057f2f896495211d18650a9f6c6a00c",
+                  "request": "vlq_555555555555555555555",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "ImportStaged",
+                    "import": "vli_iiiiiiiiiiiiiiiiiiiii",
+                    "trace": "vlt_ttttttttttttttttttttt",
+                    "batch": "2c7686a3bef575039478fc56d4431a9f1b41d3f9b3fe5382b220407895ccde1c",
+                    "rows": 1
+                  }
+                },
+                "hash": "da08c308cf79ccc212a4c298a0c99874da3bbd41d18870cb1653328b19aff430",
+                "signature": "jf3kJjtS8vw1M6w_HASVdtKTl5c3ROUQXmua49R6SSp8wWCqWRmS-lXuGzEGVYrLCOTBsmIb3Rkv8QNKM9X8DA"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "7",
+                  "prev": "da08c308cf79ccc212a4c298a0c99874da3bbd41d18870cb1653328b19aff430",
+                  "request": "vlq_666666666666666666666",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "ImportCommitted",
+                    "import": "vli_iiiiiiiiiiiiiiiiiiiii",
+                    "trace": "vlt_ttttttttttttttttttttt",
+                    "revision": "1",
+                    "graph": "7cf8d0976563186aa1edee4eb72e2b00d4b76332a5828265f9c9ff4ae04b24f5",
+                    "batch": "2c7686a3bef575039478fc56d4431a9f1b41d3f9b3fe5382b220407895ccde1c"
+                  }
+                },
+                "hash": "1c50190734e58508bcf3a28e36faf2d2f967a0fe7670f8aca274d5624b065d0b",
+                "signature": "Q0d2VavIU3JAoifoQi4Mur-vmvXb20STXN0Duo692BOgF6XjARDEkd6ea5UtPeEceET8hYiqRukwAqaLlo3aCw"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "8",
+                  "prev": "1c50190734e58508bcf3a28e36faf2d2f967a0fe7670f8aca274d5624b065d0b",
+                  "request": "vlq_777777777777777777777",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "ImportStaged",
+                    "import": "vli_jjjjjjjjjjjjjjjjjjjjj",
+                    "trace": "vlt_ttttttttttttttttttttt",
+                    "batch": "1c61889a83166addd9023b1d4acc32b90685759cf8c31cee64c803652233da9a",
+                    "rows": 1
+                  }
+                },
+                "hash": "5888847cf9e1a3b7e2ae81efdcf46e75e93fdf19f920896dcea6ba1e36200424",
+                "signature": "N05zxVGz488JBnUMFe0x7IqEviU2PfPFoAIHOWsz1fyOcYe1uHmlHcL9f59r_z1_ImaNIKiBwVzGbqjdCoplBA"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "9",
+                  "prev": "5888847cf9e1a3b7e2ae81efdcf46e75e93fdf19f920896dcea6ba1e36200424",
+                  "request": "vlq_888888888888888888888",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "ImportCommitted",
+                    "import": "vli_jjjjjjjjjjjjjjjjjjjjj",
+                    "trace": "vlt_ttttttttttttttttttttt",
+                    "revision": "2",
+                    "graph": "b87cc1efd7f6c0a43964e5c0388fc4a071f7dbcf4a5ce1aa040c1a5bc6eea665",
+                    "batch": "1c61889a83166addd9023b1d4acc32b90685759cf8c31cee64c803652233da9a"
+                  }
+                },
+                "hash": "c97f8d8c3d6394bb5ffd3a4ae7001d2381465df5d172ebb2a63e7425dcf7b027",
+                "signature": "Qq6y2w1eQcn6d74wnoNUNWUEi4y58cImGKMGfb1-vuf-yZP83D3zyDW3SwEHcmmU4i--2YJBJK2tGjtuKEoHBQ"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "10",
+                  "prev": "c97f8d8c3d6394bb5ffd3a4ae7001d2381465df5d172ebb2a63e7425dcf7b027",
+                  "request": "vlq_999999999999999999999",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "ImportStaged",
+                    "import": "vli_hhhhhhhhhhhhhhhhhhhhh",
+                    "trace": "vlt_ttttttttttttttttttttt",
+                    "batch": "c403d5aa9d261d83dafd77e60c6e088490066e6e3e45be2738135eb655943fcc",
+                    "rows": 1
+                  }
+                },
+                "hash": "d1776bbcacd86e8836ac5bb92a733d2496163f5d9ac14bc0ca1251ee4ffafc68",
+                "signature": "b06MP_7Kwx3koRDtzOx_mB1d5lgnr-8x5t98UCm53HhN3ClsMEJPb_PE0d2AzqcF-QGziUBAwNr6XdSf3Kw_AA"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "11",
+                  "prev": "d1776bbcacd86e8836ac5bb92a733d2496163f5d9ac14bc0ca1251ee4ffafc68",
+                  "request": "vlq_AAAAAAAAAAAAAAAAAAAAA",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "ImportCommitted",
+                    "import": "vli_hhhhhhhhhhhhhhhhhhhhh",
+                    "trace": "vlt_ttttttttttttttttttttt",
+                    "revision": "3",
+                    "graph": "254266ac6c98e6250badf6de27c4afdf2e2a32284e4bdb79210aa8b18f5c720a",
+                    "batch": "c403d5aa9d261d83dafd77e60c6e088490066e6e3e45be2738135eb655943fcc"
+                  }
+                },
+                "hash": "a6e7e24ea1663506055fcfe20cfaf08ed0aaf377850f5af33d4e60bb4d877bd6",
+                "signature": "JiBSvfz-YetQuV9to352B9o2iL2cF_LKmEdvvjibVIkWebgGWL-pXUMq3uLUcutvyvy4uDByE2QR654YRAsRCw"
+              }
+            ],
+            "attachments": []
+          },
+          "sunlight": {
+            "v": 1,
+            "kind": "action-lineage",
+            "format": "vislineage-bundle/1",
+            "bundle": "d0297474ddc9c378f7e0b16537fa1d702bd2cb160fceaa75832cb4937578ecfa",
+            "action": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+            "trace": "vlt_ttttttttttttttttttttt",
+            "graph": "254266ac6c98e6250badf6de27c4afdf2e2a32284e4bdb79210aa8b18f5c720a",
+            "disclosure": "NORMALIZED_ONLY",
+            "semantics": "NOT_VERIFIED"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "id": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+        "method": "bundle.verify",
+        "params": {
+          "bundle": {
+            "body": {
+              "v": 1,
+              "format": "vislineage-bundle/1",
+              "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+              "trace": "vlt_ttttttttttttttttttttt",
+              "revision": "3",
+              "graph": {
+                "v": 1,
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "trace": "vlt_ttttttttttttttttttttt",
+                "steps": [
+                  "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+                  "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+                  "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+                ],
+                "origins": [
+                  "48cce25040fe8ae56e4f4f9d964e71ec2a37d72dc1e71319399044035ef1bf8d",
+                  "5acf023a71fb64e6eeb39c3114e07955f909486a82c92b438d6cf51b8c1cfb1b",
+                  "ea4ca766d5ba35e88d6910724c26469d53f74aa514b3d313063d86707e984786"
+                ],
+                "edges": [
+                  "54d475d707825ef815312d5e1705f2fa909a92fd72757fa62940ebcf342d45d1",
+                  "ebfd733000e75231951c0cff713e69f5f109caf60ee9c1e8e5fe254c63516ae5"
+                ],
+                "gaps": []
+              },
+              "path_request": {
+                "trace": "vlt_ttttttttttttttttttttt",
+                "revision": "3",
+                "action": {
+                  "source": "vls_ccccccccccccccccccccc",
+                  "record": "c"
+                },
+                "max_depth": 256,
+                "max_nodes": 4096
+              },
+              "path": {
+                "trace": "vlt_ttttttttttttttttttttt",
+                "revision": "3",
+                "graph": "254266ac6c98e6250badf6de27c4afdf2e2a32284e4bdb79210aa8b18f5c720a",
+                "action": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+                "steps": [
+                  {
+                    "body": {
+                      "v": 1,
+                      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                      "trace": "vlt_ttttttttttttttttttttt",
+                      "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                      "profile": "langsmith-runs/1",
+                      "record": "a",
+                      "native_trace": "native-ls",
+                      "native_span": "a",
+                      "parents": [],
+                      "agent": {
+                        "namespace": "lab",
+                        "subject": "alice",
+                        "principal": null
+                      },
+                      "policy": {
+                        "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                        "version": "policy-1",
+                        "decision": "ALLOW"
+                      },
+                      "offers": [
+                        {
+                          "id": "vld_ddddddddddddddddddddd",
+                          "child_source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                          "child_agent": {
+                            "namespace": "lab",
+                            "subject": "bob",
+                            "principal": null
+                          },
+                          "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                        }
+                      ],
+                      "accept": null,
+                      "attachments": []
+                    },
+                    "hash": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+                  },
+                  {
+                    "body": {
+                      "v": 1,
+                      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                      "trace": "vlt_ttttttttttttttttttttt",
+                      "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                      "profile": "langfuse-observations/1",
+                      "record": "b",
+                      "native_trace": "native-lf",
+                      "native_span": "b",
+                      "parents": [],
+                      "agent": {
+                        "namespace": "lab",
+                        "subject": "bob",
+                        "principal": null
+                      },
+                      "policy": {
+                        "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                        "version": "policy-1",
+                        "decision": "ALLOW"
+                      },
+                      "offers": [
+                        {
+                          "id": "vld_eeeeeeeeeeeeeeeeeeeee",
+                          "child_source": "vls_ccccccccccccccccccccc",
+                          "child_agent": {
+                            "namespace": "lab",
+                            "subject": "cara",
+                            "principal": null
+                          },
+                          "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                        }
+                      ],
+                      "accept": {
+                        "id": "vld_ddddddddddddddddddddd",
+                        "parent": {
+                          "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                          "record": "a",
+                          "hash": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+                        },
+                        "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                      },
+                      "attachments": []
+                    },
+                    "hash": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec"
+                  },
+                  {
+                    "body": {
+                      "v": 1,
+                      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                      "trace": "vlt_ttttttttttttttttttttt",
+                      "source": "vls_ccccccccccccccccccccc",
+                      "profile": "braintrust-spans/1",
+                      "record": "c",
+                      "native_trace": "native-bt",
+                      "native_span": "c",
+                      "parents": [],
+                      "agent": {
+                        "namespace": "lab",
+                        "subject": "cara",
+                        "principal": null
+                      },
+                      "policy": {
+                        "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                        "version": "policy-1",
+                        "decision": "ALLOW"
+                      },
+                      "offers": [],
+                      "accept": {
+                        "id": "vld_eeeeeeeeeeeeeeeeeeeee",
+                        "parent": {
+                          "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                          "record": "b",
+                          "hash": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec"
+                        },
+                        "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                      },
+                      "attachments": []
+                    },
+                    "hash": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d"
+                  }
+                ],
+                "origins": [
+                  {
+                    "body": {
+                      "v": 1,
+                      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                      "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                      "stream": "main",
+                      "seq": "1",
+                      "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                      "step": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354",
+                      "key": "vlk_lllllllllllllllllllll"
+                    },
+                    "hash": "5acf023a71fb64e6eeb39c3114e07955f909486a82c92b438d6cf51b8c1cfb1b",
+                    "signature": "ptmgqRvJxwjGG_1Dr31WGjK7PYPLCwiwJ0ARMgz0c6VCYxKdx2yXSE-I4w1RhzM_hV8CpLytHUp6HQH6j0iQDA"
+                  },
+                  {
+                    "body": {
+                      "v": 1,
+                      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                      "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                      "stream": "main",
+                      "seq": "1",
+                      "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                      "step": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+                      "key": "vlk_mmmmmmmmmmmmmmmmmmmmm"
+                    },
+                    "hash": "ea4ca766d5ba35e88d6910724c26469d53f74aa514b3d313063d86707e984786",
+                    "signature": "C8xX85pg80z--1AUy_BS-DwGcv695aqb9_8oY_WzJYzky-Oe0zky-9PebwJwLuPPSOMDPhItUTw84ahbabtGAg"
+                  },
+                  {
+                    "body": {
+                      "v": 1,
+                      "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                      "source": "vls_ccccccccccccccccccccc",
+                      "stream": "main",
+                      "seq": "1",
+                      "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                      "step": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+                      "key": "vlk_nnnnnnnnnnnnnnnnnnnnn"
+                    },
+                    "hash": "48cce25040fe8ae56e4f4f9d964e71ec2a37d72dc1e71319399044035ef1bf8d",
+                    "signature": "P5YNWe-waZq1zC9EJkvYLjm9rkindMToIrebo9cPVeAZk66LhJiXefaEKt2bUhPGUikQ4QyA8SskOWoVktdrDA"
+                  }
+                ],
+                "edges": [
+                  {
+                    "body": {
+                      "v": 1,
+                      "trace": "vlt_ttttttttttttttttttttt",
+                      "parent": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+                      "child": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+                      "kind": "DELEGATES",
+                      "delegation": "vld_eeeeeeeeeeeeeeeeeeeee",
+                      "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                    },
+                    "hash": "54d475d707825ef815312d5e1705f2fa909a92fd72757fa62940ebcf342d45d1"
+                  },
+                  {
+                    "body": {
+                      "v": 1,
+                      "trace": "vlt_ttttttttttttttttttttt",
+                      "parent": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354",
+                      "child": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+                      "kind": "DELEGATES",
+                      "delegation": "vld_ddddddddddddddddddddd",
+                      "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                    },
+                    "hash": "ebfd733000e75231951c0cff713e69f5f109caf60ee9c1e8e5fe254c63516ae5"
+                  }
+                ],
+                "gaps": [],
+                "structural": "COMPLETE_RELATIVE",
+                "evidence": "CLAIMED",
+                "disclosure": "NORMALIZED_ONLY"
+              },
+              "inventory": [
+                {
+                  "kind": "audit",
+                  "digest": "0ed47872174dc6fa0b06f43a11205b631d95dc318e0d8e60612d0b3ab69113cd",
+                  "bytes": "535"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "55286590957f4740ca3937fca48353124eb33d6bccfea908060d97332d54b6d3",
+                  "bytes": "498"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "5e4ec09fe70e4663e9e15c7fe425761958eb1a3390a60580bcf685553e8fc175",
+                  "bytes": "575"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "61dfd67b1769c250497cf4235b0fb6452a467daac342b8f5ad096218ac6ae469",
+                  "bytes": "575"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "646b20e6d2bb84ca227df43dfd0d4bdf97ec3b3e1961e680e198cdf14193e4e2",
+                  "bytes": "529"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "7dcbe147c3025117cb45353c9ce288b0f418161fb15703495d77c82992622bd6",
+                  "bytes": "660"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "a466bac61788e65d8c8788e8e6c5d50389bacb2a537bc65ffe194cdba4721edb",
+                  "bytes": "528"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "ae093406a1c274b9fbd0aa2827c9bca219d6107fc28552623bf3586d986675d2",
+                  "bytes": "530"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "e72da98f1485b856434faa565d97d7d18156206f346e715939bfba1d92aeb3d0",
+                  "bytes": "659"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "f7d45ee72b8c71074100aa5e06e0c15e965c73654f8b9e7e599f1ae034b4b6b4",
+                  "bytes": "659"
+                },
+                {
+                  "kind": "audit",
+                  "digest": "fee4e9ba36e34a8fb9682247f726867c07aab3814d5b8cdb975d4fd37afdbdf8",
+                  "bytes": "576"
+                },
+                {
+                  "kind": "origin",
+                  "digest": "2427577ecbc7af574b6844fd5eb80b3361d6b16f6b75dd8b650ee5693a49d215",
+                  "bytes": "476"
+                },
+                {
+                  "kind": "origin",
+                  "digest": "6022cea06a74bb10904c48cce9efa59abd0cf1f60d552996097f04a7aa3a0188",
+                  "bytes": "476"
+                },
+                {
+                  "kind": "origin",
+                  "digest": "f2caa7e1fb413f54b7fc708790af90a28429f7dec649ba1d8323042d89cf4153",
+                  "bytes": "476"
+                },
+                {
+                  "kind": "step",
+                  "digest": "2de97b5e20c08ed18751293f0705bfceae8bccdb4357a56f675edc8c7ea10086",
+                  "bytes": "777"
+                },
+                {
+                  "kind": "step",
+                  "digest": "7fd094ccd9ea665749c00e0cffa0c0420eaae6f1ab8904cb5fb88a682548b41b",
+                  "bytes": "1001"
+                },
+                {
+                  "kind": "step",
+                  "digest": "e70289bd68de1514488df10d25147289ef7555ff0571d91ec208290f1e1af497",
+                  "bytes": "755"
+                }
+              ],
+              "attachment_policy": "OMIT",
+              "disclosure": "NORMALIZED_ONLY",
+              "trust_required": true
+            },
+            "hash": "d0297474ddc9c378f7e0b16537fa1d702bd2cb160fceaa75832cb4937578ecfa",
+            "steps": [
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "trace": "vlt_ttttttttttttttttttttt",
+                  "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                  "profile": "langfuse-observations/1",
+                  "record": "b",
+                  "native_trace": "native-lf",
+                  "native_span": "b",
+                  "parents": [],
+                  "agent": {
+                    "namespace": "lab",
+                    "subject": "bob",
+                    "principal": null
+                  },
+                  "policy": {
+                    "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                    "version": "policy-1",
+                    "decision": "ALLOW"
+                  },
+                  "offers": [
+                    {
+                      "id": "vld_eeeeeeeeeeeeeeeeeeeee",
+                      "child_source": "vls_ccccccccccccccccccccc",
+                      "child_agent": {
+                        "namespace": "lab",
+                        "subject": "cara",
+                        "principal": null
+                      },
+                      "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                    }
+                  ],
+                  "accept": {
+                    "id": "vld_ddddddddddddddddddddd",
+                    "parent": {
+                      "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                      "record": "a",
+                      "hash": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+                    },
+                    "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                  },
+                  "attachments": []
+                },
+                "hash": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "trace": "vlt_ttttttttttttttttttttt",
+                  "source": "vls_ccccccccccccccccccccc",
+                  "profile": "braintrust-spans/1",
+                  "record": "c",
+                  "native_trace": "native-bt",
+                  "native_span": "c",
+                  "parents": [],
+                  "agent": {
+                    "namespace": "lab",
+                    "subject": "cara",
+                    "principal": null
+                  },
+                  "policy": {
+                    "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                    "version": "policy-1",
+                    "decision": "ALLOW"
+                  },
+                  "offers": [],
+                  "accept": {
+                    "id": "vld_eeeeeeeeeeeeeeeeeeeee",
+                    "parent": {
+                      "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                      "record": "b",
+                      "hash": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec"
+                    },
+                    "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                  },
+                  "attachments": []
+                },
+                "hash": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "trace": "vlt_ttttttttttttttttttttt",
+                  "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                  "profile": "langsmith-runs/1",
+                  "record": "a",
+                  "native_trace": "native-ls",
+                  "native_span": "a",
+                  "parents": [],
+                  "agent": {
+                    "namespace": "lab",
+                    "subject": "alice",
+                    "principal": null
+                  },
+                  "policy": {
+                    "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+                    "version": "policy-1",
+                    "decision": "ALLOW"
+                  },
+                  "offers": [
+                    {
+                      "id": "vld_ddddddddddddddddddddd",
+                      "child_source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                      "child_agent": {
+                        "namespace": "lab",
+                        "subject": "bob",
+                        "principal": null
+                      },
+                      "scope": "1111111111111111111111111111111111111111111111111111111111111111"
+                    }
+                  ],
+                  "accept": null,
+                  "attachments": []
+                },
+                "hash": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354"
+              }
+            ],
+            "origins": [
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                  "stream": "main",
+                  "seq": "1",
+                  "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                  "step": "dc2b51faa2b69d0d8ab7848ec1b612839d6bb24415b121de2702c06f18ef4354",
+                  "key": "vlk_lllllllllllllllllllll"
+                },
+                "hash": "5acf023a71fb64e6eeb39c3114e07955f909486a82c92b438d6cf51b8c1cfb1b",
+                "signature": "ptmgqRvJxwjGG_1Dr31WGjK7PYPLCwiwJ0ARMgz0c6VCYxKdx2yXSE-I4w1RhzM_hV8CpLytHUp6HQH6j0iQDA"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                  "stream": "main",
+                  "seq": "1",
+                  "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                  "step": "011de1ef761f7ea7af92fabb06ac0520df53572c235743fbe3cb537f571ee4ec",
+                  "key": "vlk_mmmmmmmmmmmmmmmmmmmmm"
+                },
+                "hash": "ea4ca766d5ba35e88d6910724c26469d53f74aa514b3d313063d86707e984786",
+                "signature": "C8xX85pg80z--1AUy_BS-DwGcv695aqb9_8oY_WzJYzky-Oe0zky-9PebwJwLuPPSOMDPhItUTw84ahbabtGAg"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "source": "vls_ccccccccccccccccccccc",
+                  "stream": "main",
+                  "seq": "1",
+                  "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                  "step": "b6a5b18a48f02f79b384b816f8f0d5a0d35955bcb5171d87d5d256b2f799989d",
+                  "key": "vlk_nnnnnnnnnnnnnnnnnnnnn"
+                },
+                "hash": "48cce25040fe8ae56e4f4f9d964e71ec2a37d72dc1e71319399044035ef1bf8d",
+                "signature": "P5YNWe-waZq1zC9EJkvYLjm9rkindMToIrebo9cPVeAZk66LhJiXefaEKt2bUhPGUikQ4QyA8SskOWoVktdrDA"
+              }
+            ],
+            "audit": [
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "1",
+                  "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+                  "request": "vlq_000000000000000000000",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "WorkspaceCreated",
+                    "config": "d10700f0f5189d9059a540c0c54e4442941e8e295eca74934881206edb22f210"
+                  }
+                },
+                "hash": "20c27ded4c69442138e2877bbbcbf474fffe6afc6669b852aa1d1864112f26e1",
+                "signature": "ftmsD2c8q0u3lmHF7C7QzBjWz-cvrQL1t7YqDBazoiO6_mVnuanZdy3I9J5c1Dz2kLDXYXe5MSApyoygTVgmDQ"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "2",
+                  "prev": "20c27ded4c69442138e2877bbbcbf474fffe6afc6669b852aa1d1864112f26e1",
+                  "request": "vlq_111111111111111111111",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "SourceRegistered",
+                    "source": {
+                      "id": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                      "profile": "langsmith-runs/1",
+                      "namespace": "lab",
+                      "project": "ls"
+                    }
+                  }
+                },
+                "hash": "7b27f200c9a612971168e5c477bd52ab743b8637619be926c447a21ceda8a767",
+                "signature": "bDiB-imtRs74I3QmbOWYEGPBkaI07npEL5XiEe9z9TUUndwVFI403Sg23Y7aSd1EF6-XCsLzTEnJgFaoPZf4CA"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "3",
+                  "prev": "7b27f200c9a612971168e5c477bd52ab743b8637619be926c447a21ceda8a767",
+                  "request": "vlq_222222222222222222222",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "SourceRegistered",
+                    "source": {
+                      "id": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                      "profile": "langfuse-observations/1",
+                      "namespace": "lab",
+                      "project": "lf"
+                    }
+                  }
+                },
+                "hash": "12759774a972b2639482e60f1218a9ce084ad3d56762c228914b1be8f2aeae36",
+                "signature": "RmrRo6biz4f4-pyHy0AZafgY7MHQ9WnTlAOz6_jMjlu5Zlthgxlc6p_hf3MoraxLO_lYwJ0YBfww2e0Fl2L_Cw"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "4",
+                  "prev": "12759774a972b2639482e60f1218a9ce084ad3d56762c228914b1be8f2aeae36",
+                  "request": "vlq_333333333333333333333",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "SourceRegistered",
+                    "source": {
+                      "id": "vls_ccccccccccccccccccccc",
+                      "profile": "braintrust-spans/1",
+                      "namespace": "lab",
+                      "project": "bt"
+                    }
+                  }
+                },
+                "hash": "dc4f5a3120137188193cbde5323928c7e1a21a4324bf597b6a4aa952c6965134",
+                "signature": "eTtI13enfNAVKNFQuQdW0THNPEVwi6Re8BVTH-t2buYkSNOyoeqx8d_tBTTABmCD7J3WGnXjy22ztdM4hcz5Bw"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "5",
+                  "prev": "dc4f5a3120137188193cbde5323928c7e1a21a4324bf597b6a4aa952c6965134",
+                  "request": "vlq_444444444444444444444",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "TraceCreated",
+                    "trace": "vlt_ttttttttttttttttttttt",
+                    "graph": "55c6b07ad72ca8913c2667a2a2b019cf668bd6f1f3f0bf96b49a0b77622d5bb6"
+                  }
+                },
+                "hash": "5199c6b173c4e9b2c4bec6d982e099456057f2f896495211d18650a9f6c6a00c",
+                "signature": "5eABUhWajvTK17Y6ArW_KQmE6KCll_96A7ZDxMcN7faWhxA9AoV4oXVNablchiVBDd5STS5IWxbg8ij8RvQKAw"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "6",
+                  "prev": "5199c6b173c4e9b2c4bec6d982e099456057f2f896495211d18650a9f6c6a00c",
+                  "request": "vlq_555555555555555555555",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "ImportStaged",
+                    "import": "vli_iiiiiiiiiiiiiiiiiiiii",
+                    "trace": "vlt_ttttttttttttttttttttt",
+                    "batch": "2c7686a3bef575039478fc56d4431a9f1b41d3f9b3fe5382b220407895ccde1c",
+                    "rows": 1
+                  }
+                },
+                "hash": "da08c308cf79ccc212a4c298a0c99874da3bbd41d18870cb1653328b19aff430",
+                "signature": "jf3kJjtS8vw1M6w_HASVdtKTl5c3ROUQXmua49R6SSp8wWCqWRmS-lXuGzEGVYrLCOTBsmIb3Rkv8QNKM9X8DA"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "7",
+                  "prev": "da08c308cf79ccc212a4c298a0c99874da3bbd41d18870cb1653328b19aff430",
+                  "request": "vlq_666666666666666666666",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "ImportCommitted",
+                    "import": "vli_iiiiiiiiiiiiiiiiiiiii",
+                    "trace": "vlt_ttttttttttttttttttttt",
+                    "revision": "1",
+                    "graph": "7cf8d0976563186aa1edee4eb72e2b00d4b76332a5828265f9c9ff4ae04b24f5",
+                    "batch": "2c7686a3bef575039478fc56d4431a9f1b41d3f9b3fe5382b220407895ccde1c"
+                  }
+                },
+                "hash": "1c50190734e58508bcf3a28e36faf2d2f967a0fe7670f8aca274d5624b065d0b",
+                "signature": "Q0d2VavIU3JAoifoQi4Mur-vmvXb20STXN0Duo692BOgF6XjARDEkd6ea5UtPeEceET8hYiqRukwAqaLlo3aCw"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "8",
+                  "prev": "1c50190734e58508bcf3a28e36faf2d2f967a0fe7670f8aca274d5624b065d0b",
+                  "request": "vlq_777777777777777777777",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "ImportStaged",
+                    "import": "vli_jjjjjjjjjjjjjjjjjjjjj",
+                    "trace": "vlt_ttttttttttttttttttttt",
+                    "batch": "1c61889a83166addd9023b1d4acc32b90685759cf8c31cee64c803652233da9a",
+                    "rows": 1
+                  }
+                },
+                "hash": "5888847cf9e1a3b7e2ae81efdcf46e75e93fdf19f920896dcea6ba1e36200424",
+                "signature": "N05zxVGz488JBnUMFe0x7IqEviU2PfPFoAIHOWsz1fyOcYe1uHmlHcL9f59r_z1_ImaNIKiBwVzGbqjdCoplBA"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "9",
+                  "prev": "5888847cf9e1a3b7e2ae81efdcf46e75e93fdf19f920896dcea6ba1e36200424",
+                  "request": "vlq_888888888888888888888",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "ImportCommitted",
+                    "import": "vli_jjjjjjjjjjjjjjjjjjjjj",
+                    "trace": "vlt_ttttttttttttttttttttt",
+                    "revision": "2",
+                    "graph": "b87cc1efd7f6c0a43964e5c0388fc4a071f7dbcf4a5ce1aa040c1a5bc6eea665",
+                    "batch": "1c61889a83166addd9023b1d4acc32b90685759cf8c31cee64c803652233da9a"
+                  }
+                },
+                "hash": "c97f8d8c3d6394bb5ffd3a4ae7001d2381465df5d172ebb2a63e7425dcf7b027",
+                "signature": "Qq6y2w1eQcn6d74wnoNUNWUEi4y58cImGKMGfb1-vuf-yZP83D3zyDW3SwEHcmmU4i--2YJBJK2tGjtuKEoHBQ"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "10",
+                  "prev": "c97f8d8c3d6394bb5ffd3a4ae7001d2381465df5d172ebb2a63e7425dcf7b027",
+                  "request": "vlq_999999999999999999999",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "ImportStaged",
+                    "import": "vli_hhhhhhhhhhhhhhhhhhhhh",
+                    "trace": "vlt_ttttttttttttttttttttt",
+                    "batch": "c403d5aa9d261d83dafd77e60c6e088490066e6e3e45be2738135eb655943fcc",
+                    "rows": 1
+                  }
+                },
+                "hash": "d1776bbcacd86e8836ac5bb92a733d2496163f5d9ac14bc0ca1251ee4ffafc68",
+                "signature": "b06MP_7Kwx3koRDtzOx_mB1d5lgnr-8x5t98UCm53HhN3ClsMEJPb_PE0d2AzqcF-QGziUBAwNr6XdSf3Kw_AA"
+              },
+              {
+                "body": {
+                  "v": 1,
+                  "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                  "seq": "11",
+                  "prev": "d1776bbcacd86e8836ac5bb92a733d2496163f5d9ac14bc0ca1251ee4ffafc68",
+                  "request": "vlq_AAAAAAAAAAAAAAAAAAAAA",
+                  "key": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                  "data": {
+                    "kind": "ImportCommitted",
+                    "import": "vli_hhhhhhhhhhhhhhhhhhhhh",
+                    "trace": "vlt_ttttttttttttttttttttt",
+                    "revision": "3",
+                    "graph": "254266ac6c98e6250badf6de27c4afdf2e2a32284e4bdb79210aa8b18f5c720a",
+                    "batch": "c403d5aa9d261d83dafd77e60c6e088490066e6e3e45be2738135eb655943fcc"
+                  }
+                },
+                "hash": "a6e7e24ea1663506055fcfe20cfaf08ed0aaf377850f5af33d4e60bb4d877bd6",
+                "signature": "JiBSvfz-YetQuV9to352B9o2iL2cF_LKmEdvvjibVIkWebgGWL-pXUMq3uLUcutvyvy4uDByE2QR654YRAsRCw"
+              }
+            ],
+            "attachments": []
+          },
+          "trust": {
+            "v": 1,
+            "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+            "keys": [
+              {
+                "id": "vlk_kkkkkkkkkkkkkkkkkkkkk",
+                "public": "11l5O7wTooGagnx2rbb7qKSa7gB_SfLQmS2ZuCWtLEg",
+                "role": "audit",
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "source": null,
+                "stream": null,
+                "first_seq": "1",
+                "last_seq": "11",
+                "status": "ACTIVE"
+              },
+              {
+                "id": "vlk_lllllllllllllllllllll",
+                "public": "0EqyMnQrtKs6E2i9RhXk5tAiSrcaAWuvhSCjMsl3hzc",
+                "role": "origin",
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                "stream": "main",
+                "first_seq": "1",
+                "last_seq": "1",
+                "status": "ACTIVE"
+              },
+              {
+                "id": "vlk_mmmmmmmmmmmmmmmmmmmmm",
+                "public": "oJql9HpnWYAv-VX43C0qFKXJnSO-l_hkEn_5ODRVpPA",
+                "role": "origin",
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                "stream": "main",
+                "first_seq": "1",
+                "last_seq": "1",
+                "status": "ACTIVE"
+              },
+              {
+                "id": "vlk_nnnnnnnnnnnnnnnnnnnnn",
+                "public": "F8t5-ytBIPKx7GXkGY1uCLKOgT_rAeSkAIObheGAgM4",
+                "role": "origin",
+                "workspace": "vlw_wwwwwwwwwwwwwwwwwwwww",
+                "source": "vls_ccccccccccccccccccccc",
+                "stream": "main",
+                "first_seq": "1",
+                "last_seq": "1",
+                "status": "ACTIVE"
+              }
+            ],
+            "heads": [
+              {
+                "role": "audit",
+                "source": null,
+                "stream": null,
+                "seq": "11",
+                "hash": "a6e7e24ea1663506055fcfe20cfaf08ed0aaf377850f5af33d4e60bb4d877bd6"
+              },
+              {
+                "role": "origin",
+                "source": "vls_aaaaaaaaaaaaaaaaaaaaa",
+                "stream": "main",
+                "seq": "1",
+                "hash": "5acf023a71fb64e6eeb39c3114e07955f909486a82c92b438d6cf51b8c1cfb1b"
+              },
+              {
+                "role": "origin",
+                "source": "vls_bbbbbbbbbbbbbbbbbbbbb",
+                "stream": "main",
+                "seq": "1",
+                "hash": "ea4ca766d5ba35e88d6910724c26469d53f74aa514b3d313063d86707e984786"
+              },
+              {
+                "role": "origin",
+                "source": "vls_ccccccccccccccccccccc",
+                "stream": "main",
+                "seq": "1",
+                "hash": "48cce25040fe8ae56e4f4f9d964e71ec2a37d72dc1e71319399044035ef1bf8d"
+              }
+            ]
+          }
+        }
+      },
+      "response": {
+        "id": "vlq_qqqqqqqqqqqqqqqqqqqqq",
+        "ok": true,
+        "result": {
+          "integrity": "VALID",
+          "structural": "COMPLETE_RELATIVE",
+          "origin": "TRUSTED_AT_PIN",
+          "audit": "TRUSTED_AT_PIN",
+          "disclosure": "NORMALIZED_ONLY",
+          "semantics": "NOT_VERIFIED",
+          "current_authority": "UNKNOWN",
+          "reasons": []
+        }
+      }
+    }
+  ]
+}

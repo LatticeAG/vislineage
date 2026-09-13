@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://latticeag.dev/schemas/vislineage/trust-update.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "v",
+    "workspace",
+    "retire",
+    "activate"
+  ],
+  "properties": {
+    "v": {
+      "const": 1
+    },
+    "workspace": {
+      "type": "string",
+      "pattern": "^vlw_[-_0-9A-Za-z]{21}$"
+    },
+    "retire": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "last_seq"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^vlk_[-_0-9A-Za-z]{21}$"
+        },
+        "last_seq": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        }
+      }
+    },
+    "activate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "public",
+        "first_seq"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^vlk_[-_0-9A-Za-z]{21}$"
+        },
+        "public": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "description": "Ed25519 public key, 32 bytes, base64url"
+        },
+        "first_seq": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "vislineage",
+  "version": "0.1.0",
+  "description": "VisLineage CLI: file import, lineage query, proof-bundle export/verify, local RPC service (protocol vislineage/1)",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "bin": {
+    "vislineage": "bin/vislineage.js"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "dependencies": {
+    "@latticeag/vislineage-core": "0.1.0",
+    "@latticeag/vislineage-sqlite": "0.1.0"
+  }
+}

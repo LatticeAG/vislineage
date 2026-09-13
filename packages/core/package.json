@@ -1,0 +1,24 @@
+{
+  "name": "@latticeag/vislineage-core",
+  "version": "0.1.0",
+  "description": "VisLineage core: strict parsing, profile normalization, deterministic graph reduction, hashes, bundle verification (protocol vislineage/1)",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "canonicalize": "2.1.0"
+  }
+}

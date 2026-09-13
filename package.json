@@ -1,0 +1,24 @@
+{
+  "name": "vislineage-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "VisLineage — cross-platform agent action lineage joiner (protocol vislineage/1)",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "test": "npm run build && node --test \"tests/*.test.mjs\"",
+    "test:python": "python3 -m pytest python/tests -q",
+    "check": "tsc -b tsconfig.build.json --force"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.2",
+    "typescript": "5.9.3"
+  }
+}

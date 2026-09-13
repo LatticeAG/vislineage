@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://latticeag.dev/schemas/vislineage/graph-manifest.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "v",
+    "workspace",
+    "trace",
+    "steps",
+    "origins",
+    "edges",
+    "gaps"
+  ],
+  "properties": {
+    "v": {
+      "const": 1
+    },
+    "workspace": {
+      "type": "string",
+      "pattern": "^vlw_[-_0-9A-Za-z]{21}$"
+    },
+    "trace": {
+      "type": "string",
+      "pattern": "^vlt_[-_0-9A-Za-z]{21}$"
+    },
+    "steps": {
+      "type": "array",
+      "maxItems": 100000,
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "origins": {
+      "type": "array",
+      "maxItems": 100000,
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "edges": {
+      "type": "array",
+      "maxItems": 400000,
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "maxItems": 400000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "subject",
+          "related"
+        ],
+        "properties": {
+          "code": {
+            "enum": [
+              "PARENT_MISSING",
+              "PARENT_AMBIGUOUS",
+              "OFFER_MISSING",
+              "ACCEPT_MISSING",
+              "DELEGATION_MISMATCH",
+              "PARENT_HASH_MISMATCH",
+              "DELEGATION_REUSED",
+              "SOURCE_CONFLICT",
+              "CYCLE",
+              "ORIGIN_GAP",
+              "ORIGIN_FORK"
+            ]
+          },
+          "subject": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "related": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        }
+      }
+    }
+  }
+}
