@@ -74,10 +74,12 @@ python3 -m pytest python/tests -q   # Python verifier parity suite
 node schemas/generate.mjs       # regenerate the schema registry
 ```
 
-Quick start:
+Quick start (generate a fresh private audit seed; the repeated-byte fixture seeds
+`11`, `22`, `33`, and `44` are test-only and production CLI initialization
+rejects them):
 
 ```sh
-export VISLINEAGE_AUDIT_SEED=<64 lowercase hex chars>
+export VISLINEAGE_AUDIT_SEED=$(openssl rand -hex 32)
 export VISLINEAGE_ADMIN_TOKEN=<bearer token>
 vislineage init --workspace vlw_… --db ./state/lineage.sqlite --key-env VISLINEAGE_AUDIT_SEED
 vislineage source add --id vls_… --profile langsmith-runs/1 --namespace acme --project agent
