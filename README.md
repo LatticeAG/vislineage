@@ -70,7 +70,8 @@ under domain-separated SHA-256, and verification is pure.
 
 ```sh
 npm ci && npm test              # TypeScript build + conformance/gate suite
-python3 -m pytest python/tests -q   # Python verifier parity suite
+python3 -m pip install -e ".[test]" # Python verifier and test dependencies
+python3 -m pytest -q               # Python verifier parity suite
 node schemas/generate.mjs       # regenerate the schema registry
 ```
 
@@ -89,6 +90,7 @@ vislineage import commit --id vli_… --expected-revision 0
 vislineage path --trace vlt_… --revision 1 --source vls_… --record <record>
 vislineage export --trace vlt_… --revision 1 --source vls_… --record <record> --out bundle.json
 vislineage verify --bundle bundle.json --trust trust.json   # prepare trust.json as described below
+python3 -m vislineage verify --bundle bundle.json --trust trust.json
 ```
 
 ### Trust for a live export
