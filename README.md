@@ -70,14 +70,17 @@ under domain-separated SHA-256, and verification is pure.
 
 ```sh
 npm ci && npm test              # TypeScript build + conformance/gate suite
-python3 -m pytest python/tests -q   # Python verifier parity suite
+python3 -m pip install -e ".[test]" # Python verifier and test dependencies
+python3 -m pytest -q               # Python verifier parity suite
 node schemas/generate.mjs       # regenerate the schema registry
 ```
 
-Quick start:
+Quick start (generate a fresh private audit seed; the repeated-byte fixture seeds
+`11`, `22`, `33`, and `44` are test-only and production CLI initialization
+rejects them):
 
 ```sh
-export VISLINEAGE_AUDIT_SEED=<64 lowercase hex chars>
+export VISLINEAGE_AUDIT_SEED=$(openssl rand -hex 32)
 export VISLINEAGE_ADMIN_TOKEN=<bearer token>
 vislineage init --workspace vlw_… --db ./state/lineage.sqlite --key-env VISLINEAGE_AUDIT_SEED
 vislineage source add --id vls_… --profile langsmith-runs/1 --namespace acme --project agent
@@ -86,8 +89,52 @@ vislineage import stage --id vli_… --source vls_… --trace vlt_… --file exp
 vislineage import commit --id vli_… --expected-revision 0
 vislineage path --trace vlt_… --revision 1 --source vls_… --record <record>
 vislineage export --trace vlt_… --revision 1 --source vls_… --record <record> --out bundle.json
-vislineage verify --bundle bundle.json --trust trust.json   # or: python3 -m vislineage verify …
+vislineage verify --bundle bundle.json --trust trust.json   # prepare trust.json as described below
+python3 -m vislineage verify --bundle bundle.json --trust trust.json
 ```
+
+### Trust for a live export
+
+`trust.json` is supplied independently by the verifier; `init` does not create
+it. The trust package in `tests/fixtures.json` is for the precomputed fixture
+bundle only. It pins a different audit key and head from a newly initialized
+workspace, so it cannot verify a live export's audit chain.
+
+For a live bundle, obtain the following from trusted workspace and origin
+administrators, and transfer the resulting trust package to the verifier over
+a trusted channel (do not take the pins on trust from the bundle itself):
+
+- The workspace ID and `audit_key_id` from `vislineage.json`, and the raw
+  Ed25519 public key corresponding to the seed used at `init`, encoded as
+  unpadded base64url. The seed is private; do not put it in the trust package.
+- An independently recorded audit head (sequence and hash) at or before the
+  audit entry binding the exported revision. A head after that entry produces
+  `PIN_AHEAD`: exports contain the chain only through the revision binding.
+  `state/external-head.json` initially records the init head, but it is a
+  recovery pin and does not automatically advance with each commit.
+- Origin key and head pins from each origin's trusted administrator, scoped to
+  its source and stream, covering the origins for the exported records.
+
+Use this shape for `trust.json`, replacing every placeholder and adding the
+origin pins to both arrays:
+
+```json
+{
+  "v": 1,
+  "workspace": "<workspace ID>",
+  "keys": [{"id":"<audit_key_id>", "public":"<audit public key>",
+    "role":"audit", "workspace":"<workspace ID>", "source":null,
+    "stream":null, "first_seq":"1", "last_seq":"<covered last sequence>",
+    "status":"ACTIVE"}],
+  "heads": [{"role":"audit", "source":null, "stream":null,
+    "seq":"<audit head sequence>", "hash":"<audit head hash>"}]
+}
+```
+
+The audit key's sequence range must cover the audit entries in the export. If
+keys rotate, include the appropriate independently trusted key pins and their
+sequence ranges. An export without trusted origin evidence, or with an
+incomplete path, can still return exit 4 even when its audit is trusted.
 
 The CLI lifecycle (`init` → `source add` → `trace create` →
 `import stage`/`commit` → `path` → `export` → `verify`) runs entirely
